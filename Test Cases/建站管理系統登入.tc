@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>建站管理系統登入</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1ceee9fd-bd1a-4df8-9dfd-9435f4e31a8b</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>e4d89d69-6e64-4717-9608-e9255089b9d0</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>91755d3c-b49b-4ab0-b91b-a59d73f88d64</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>66ee1bb6-2102-4f17-844f-49e500220bfd</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'noah_chang@mail.chungyo.net'</defaultValue>
+      <description>google account</description>
+      <id>e4d89d69-6e64-4717-9608-e9255089b9d0</id>
+      <masked>false</masked>
+      <name>account</name>
+   </variable>
+   <variable>
+      <defaultValue>'noah_chang'</defaultValue>
+      <description>HENNGE user</description>
+      <id>91755d3c-b49b-4ab0-b91b-a59d73f88d64</id>
+      <masked>false</masked>
+      <name>hennge_user</name>
+   </variable>
+   <variable>
+      <defaultValue>'owkcwdlq3NicdQZfnDRO1g=='</defaultValue>
+      <description>HENNGE pwd</description>
+      <id>66ee1bb6-2102-4f17-844f-49e500220bfd</id>
+      <masked>false</masked>
+      <name>hennge_pwd</name>
+   </variable>
+</TestCaseEntity>
