@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>prod</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description>prod</description>
+      <initValue>'https://maid-cloud.vir000.com'</initValue>
+      <name>G_URL</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
