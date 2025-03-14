@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_申請展延憑證</name>
+   <tag></tag>
+   <elementGuidId>62bf10a3-4edc-49d9-a0ef-0f8a6f1584f2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@type = 'checkbox']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>f48f52b6-030c-4bc0-97d4-8cdd1f030b03</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>checkbox</value>
+      <webElementGuid>e9eab659-7ff0-4b86-96ee-92ba0b0595b3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-checkbox-input</value>
+      <webElementGuid>449a8fa7-b739-4d1a-b93c-632be8016c60</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>RenewCertificate</value>
+      <webElementGuid>bd954865-e708-438f-8e9b-75152ab5c0d3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/div[@class=&quot;option-container application-container&quot;]/div[@class=&quot;ant-checkbox-group vertical-style&quot;]/label[@class=&quot;ant-checkbox-wrapper ant-checkbox-group-item&quot;]/span[@class=&quot;ant-checkbox&quot;]/input[@class=&quot;ant-checkbox-input&quot;]</value>
+      <webElementGuid>adcb4339-470a-4972-a6b9-17d09d3f0e26</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

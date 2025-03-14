@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_申請撤下抗劫持目標</name>
+   <tag></tag>
+   <elementGuidId>c62b56ad-8b42-49f8-a346-98ac90261715</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@type = 'checkbox']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>d1ef77bb-a456-4d27-927e-1748f41dde0f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>checkbox</value>
+      <webElementGuid>7d72def0-8059-4c26-90e5-56b8e8d8c001</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-checkbox-input</value>
+      <webElementGuid>4f13b3d0-3580-4ec1-91d2-8a6c01f70fb9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>ApplyDetachAntiHijackTarget</value>
+      <webElementGuid>99cb7ec8-3536-41e6-8480-84a867617fc2</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/div[@class=&quot;option-container application-container&quot;]/div[@class=&quot;ant-checkbox-group vertical-style&quot;]/label[@class=&quot;ant-checkbox-wrapper ant-checkbox-group-item&quot;]/span[@class=&quot;ant-checkbox&quot;]/input[@class=&quot;ant-checkbox-input&quot;]</value>
+      <webElementGuid>279ee219-95a3-484b-a046-0fa0363c39c9</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

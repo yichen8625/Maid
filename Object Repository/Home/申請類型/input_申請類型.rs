@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_申請類型</name>
+   <tag></tag>
+   <elementGuidId>c0fedec3-0e3c-43ed-826a-08fd9d12c816</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@placeholder = '請選擇申請類型' and @type = 'text']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>label.ant-checkboxt-wrapper.ant-checkbox-group-item > span.ant-checkbox > input.ant-checkbox-input</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>b76e8a3c-6d4f-45f0-829e-33eceae0e7c3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-input search-input</value>
+      <webElementGuid>e8a07edd-10a7-44df-a006-03f864fa9972</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>請選擇申請類型</value>
+      <webElementGuid>d6dfd306-8459-47db-aae6-8ba23b3e00e6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
+      <webElementGuid>aa41d39b-ad9f-44bb-a941-80bfd9336cbb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/input[@class=&quot;ant-input search-input&quot;]</value>
+      <webElementGuid>efc52b05-4cab-42bf-b9c2-9bca50176adc</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

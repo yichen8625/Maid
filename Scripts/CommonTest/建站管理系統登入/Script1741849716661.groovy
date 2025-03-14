@@ -105,7 +105,6 @@ WebUI.click(findTestObject('Object Repository/Verification page/btn_keep'))
 
 WebUI.click(findTestObject('Object Repository/Verification page/btn_keep_ll'))
 
-WebUI.closeBrowser()
 
 
 

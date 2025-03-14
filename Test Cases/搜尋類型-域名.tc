@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>搜尋類型-域名</name>
+   <tag>搜尋類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>db64aba7-541a-4104-8599-da771f73766a</testCaseGuid>
+</TestCaseEntity>

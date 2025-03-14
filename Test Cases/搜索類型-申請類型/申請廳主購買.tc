@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>申請廳主購買</name>
+   <tag>搜索類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c1870b54-66b8-4f7b-b7b6-55fa075f3cbb</testCaseGuid>
+</TestCaseEntity>
