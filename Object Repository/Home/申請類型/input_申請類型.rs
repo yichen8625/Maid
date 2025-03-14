@@ -6,15 +6,15 @@
    <elementGuidId>c0fedec3-0e3c-43ed-826a-08fd9d12c816</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>input.ant-input.search-input</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
          <value>//*[@placeholder = '請選擇申請類型' and @type = 'text']</value>
       </entry>
-      <entry>
-         <key>CSS</key>
-         <value>label.ant-checkboxt-wrapper.ant-checkbox-group-item > span.ant-checkbox > input.ant-checkbox-input</value>
-      </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -23,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>b76e8a3c-6d4f-45f0-829e-33eceae0e7c3</webElementGuid>
+      <webElementGuid>aec341a9-3ed8-46b4-a4c5-b9a5afba2551</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -31,7 +31,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-input search-input</value>
-      <webElementGuid>e8a07edd-10a7-44df-a006-03f864fa9972</webElementGuid>
+      <webElementGuid>294c9c58-7f60-4e10-98e6-fe4571da9dd8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -39,7 +39,7 @@
       <name>placeholder</name>
       <type>Main</type>
       <value>請選擇申請類型</value>
-      <webElementGuid>d6dfd306-8459-47db-aae6-8ba23b3e00e6</webElementGuid>
+      <webElementGuid>5d60f4c4-479f-4dc1-a4c0-5b98d55f8029</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -47,7 +47,7 @@
       <name>type</name>
       <type>Main</type>
       <value>text</value>
-      <webElementGuid>aa41d39b-ad9f-44bb-a941-80bfd9336cbb</webElementGuid>
+      <webElementGuid>066ce59b-396e-4aa9-b606-236d7ea10ef0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -55,6 +55,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/input[@class=&quot;ant-input search-input&quot;]</value>
-      <webElementGuid>efc52b05-4cab-42bf-b9c2-9bca50176adc</webElementGuid>
+      <webElementGuid>cbd1a285-e408-41a9-9098-782053aafd40</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

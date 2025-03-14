@@ -6,11 +6,15 @@
    <elementGuidId>3c7dabd2-68ca-47d4-87bb-3be648fd7bc6</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>div[title='單號'] div:nth-child(1)</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
          <value>//*[(text() = '單號' or . = '單號')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -19,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>d19ace19-04aa-48aa-af00-f76b01abcc03</webElementGuid>
+      <webElementGuid>f30f71b5-a1b6-496b-81c8-f45806bb50d1</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -28,7 +32,7 @@
       <type>Main</type>
       <value>ant-select-item-option-content
 </value>
-      <webElementGuid>4a539d18-8c2f-40e0-adb5-42600c192c2e</webElementGuid>
+      <webElementGuid>2457ffc9-1bff-4e37-80cd-26dba6aa283a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -36,7 +40,7 @@
       <name>text</name>
       <type>Main</type>
       <value>單號</value>
-      <webElementGuid>eaea3e5d-c1a8-47d4-a60f-105a95207018</webElementGuid>
+      <webElementGuid>973618c0-1a5c-4fa2-acf5-20eaf9b40d16</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -44,6 +48,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[2]/div[1]/div[@class=&quot;ant-select-dropdown ant-select-dropdown-placement-bottomLeft&quot;]/div[1]/div[@class=&quot;rc-virtual-list&quot;]/div[@class=&quot;rc-virtual-list-holder&quot;]/div[1]/div[@class=&quot;rc-virtual-list-holder-inner&quot;]/div[@class=&quot;ant-select-item ant-select-item-option ant-select-item-option-active&quot;]/div[@class=&quot;ant-select-item-option-content&quot;]</value>
-      <webElementGuid>a3fe3ab3-48d5-4de3-a8bd-9d05e8ca59c5</webElementGuid>
+      <webElementGuid>456d1ddf-4822-4973-957e-b621a5e74a37</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

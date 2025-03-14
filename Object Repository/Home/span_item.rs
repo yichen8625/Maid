@@ -11,14 +11,14 @@
       </entry>
       <entry>
          <key>CSS</key>
-         <value>span.ant-select-selection-item</value>
+         <value>.ant-select-selection-item</value>
       </entry>
       <entry>
          <key>XPATH</key>
          <value></value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -27,7 +27,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>span</value>
-      <webElementGuid>2176662a-5e05-4538-b227-11706a8177ed</webElementGuid>
+      <webElementGuid>ddcd88e2-de1e-4c9a-9c5a-d1230427034b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -35,7 +35,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-select-selection-item</value>
-      <webElementGuid>4cc9000d-a003-4ff1-b4ea-1394e3198645</webElementGuid>
+      <webElementGuid>7760dc4e-288d-40f6-b287-24702de0c280</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -43,7 +43,7 @@
       <name>title</name>
       <type>Main</type>
       <value>域名</value>
-      <webElementGuid>719a22a1-022e-4bc2-82a9-08f76c925d94</webElementGuid>
+      <webElementGuid>7eab4a03-383b-4791-935a-0af956e48f0b</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -51,7 +51,7 @@
       <name>text</name>
       <type>Main</type>
       <value>域名</value>
-      <webElementGuid>b2028ba5-ad50-41a3-81af-7ec9e9fa4833</webElementGuid>
+      <webElementGuid>a0d12cb1-852d-4f55-b079-82be199b43ca</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -59,6 +59,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/div[@class=&quot;ant-select search-select ant-select-single ant-select-show-arrow ant-select-open ant-select-show-search&quot;]/div[@class=&quot;ant-select-selector&quot;]/span[@class=&quot;ant-select-selection-item&quot;]</value>
-      <webElementGuid>4fc9ec32-7cf6-4be7-b6ed-bc6f7e530cf2</webElementGuid>
+      <webElementGuid>66644e13-e584-4681-94fa-794a6c5d17ec</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

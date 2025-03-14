@@ -6,11 +6,15 @@
    <elementGuidId>9623428c-9baa-401a-a22e-631b6a18e72c</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>div[title='域名'] div[class='ant-select-item-option-content']</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
          <value>//*[(text() = '域名' or . = '域名')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -19,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>535fb807-91a2-4a92-88ea-8234c1758df2</webElementGuid>
+      <webElementGuid>c4ebf6b5-491f-4442-8fba-dee6958c05d0</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -27,7 +31,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-select-item-option-content</value>
-      <webElementGuid>c4235b2e-e828-449b-8fcb-9b733feb3fa7</webElementGuid>
+      <webElementGuid>828ede6b-c8c1-48aa-9ab6-b9697dee849c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -35,7 +39,7 @@
       <name>text</name>
       <type>Main</type>
       <value>域名</value>
-      <webElementGuid>d2cca492-3867-4d8e-8f1b-f50f3b2b5744</webElementGuid>
+      <webElementGuid>fd9092fd-a3e6-438b-a2ed-cd646fc423dc</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -43,6 +47,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[2]/div[1]/div[@class=&quot;ant-select-dropdown ant-select-dropdown-placement-bottomLeft&quot;]/div[1]/div[@class=&quot;rc-virtual-list&quot;]/div[@class=&quot;rc-virtual-list-holder&quot;]/div[1]/div[@class=&quot;rc-virtual-list-holder-inner&quot;]/div[@class=&quot;ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected&quot;]/div[@class=&quot;ant-select-item-option-content&quot;]</value>
-      <webElementGuid>77a9df28-70b2-41f8-8849-fc7a883c80b4</webElementGuid>
+      <webElementGuid>6dd4a650-d2a6-4879-9c03-792ffbf2cb3b</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

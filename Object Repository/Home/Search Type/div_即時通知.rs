@@ -6,11 +6,15 @@
    <elementGuidId>da1bc5f0-c14e-4a25-94d4-13efa04db96a</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>div[title='即時通知'] div:nth-child(1)</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
          <value>//*[(text() = '即時通知' or . = '即時通知')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -19,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>4c0951a3-141c-465d-9bdc-bb3f8f55d930</webElementGuid>
+      <webElementGuid>755aad04-112f-4d91-9ad0-207d34a38b74</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -27,7 +31,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-select-item-option-content</value>
-      <webElementGuid>8c95fba9-ed89-4147-a4f5-7c00db252f2a</webElementGuid>
+      <webElementGuid>e4badaa4-9b1b-480b-ba42-7ab20b5b47bc</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -35,7 +39,7 @@
       <name>text</name>
       <type>Main</type>
       <value>即時通知</value>
-      <webElementGuid>99c8127e-65ca-4161-a2e1-bfeacdfdbc7d</webElementGuid>
+      <webElementGuid>0ed005e5-e555-4cc5-8744-70636292844e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -43,6 +47,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/div[2]/div[1]/div[@class=&quot;ant-select-dropdown ant-select-dropdown-placement-bottomLeft&quot;]/div[1]/div[@class=&quot;rc-virtual-list&quot;]/div[@class=&quot;rc-virtual-list-holder&quot;]/div[1]/div[@class=&quot;rc-virtual-list-holder-inner&quot;]/div[@class=&quot;ant-select-item ant-select-item-option ant-select-item-option-active&quot;]/div[@class=&quot;ant-select-item-option-content&quot;]</value>
-      <webElementGuid>1c400bf1-60de-4365-904c-386a3d438cbf</webElementGuid>
+      <webElementGuid>fa458cac-7995-4e18-b976-e5d38c038ec9</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

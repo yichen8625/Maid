@@ -6,11 +6,15 @@
    <elementGuidId>ba96010e-d125-47d4-90dc-d1612d126719</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>input[value='ApplyDetachAntiBlockTarget']</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
          <value>//*[@type = 'checkbox']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -19,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>faa17189-2d4e-4ffd-9cb4-1d3ee598c201</webElementGuid>
+      <webElementGuid>bbaf90f6-9139-4548-857e-a12f4f4031ea</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -27,7 +31,7 @@
       <name>type</name>
       <type>Main</type>
       <value>checkbox</value>
-      <webElementGuid>ea712834-c9cc-4a37-b696-3028ce5efac3</webElementGuid>
+      <webElementGuid>c35b2c1a-4eb8-45f6-bd60-30419e42712e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -35,7 +39,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-checkbox-input</value>
-      <webElementGuid>46c346d9-89b0-4158-bef9-0db7282c17e2</webElementGuid>
+      <webElementGuid>befb58a5-2ed0-4531-a4d7-042e21b23f3d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -43,7 +47,7 @@
       <name>value</name>
       <type>Main</type>
       <value>ApplyDetachAntiBlockTarget</value>
-      <webElementGuid>08297e58-9911-476c-ba4a-815a7bcfcd8e</webElementGuid>
+      <webElementGuid>3720c82a-d9d9-46fa-9f4c-bd9d595ec3b2</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -51,6 +55,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/div[@class=&quot;option-container application-container&quot;]/div[@class=&quot;ant-checkbox-group vertical-style&quot;]/label[@class=&quot;ant-checkbox-wrapper ant-checkbox-group-item&quot;]/span[@class=&quot;ant-checkbox&quot;]/input[@class=&quot;ant-checkbox-input&quot;]</value>
-      <webElementGuid>84e19c1e-d5ae-45c9-9c58-28508fdc8779</webElementGuid>
+      <webElementGuid>940c3233-0fc6-4adf-9b60-ad72fdc4e1d4</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

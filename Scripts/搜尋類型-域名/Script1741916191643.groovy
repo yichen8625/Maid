@@ -35,3 +35,5 @@ WebUI.setText(findTestObject('Object Repository/Home/搜尋類型/textarea_url')
 WebUI.click(findTestObject('Object Repository/Home/搜尋類型/btn_submit'))
 
 WebUI.click(findTestObject('Object Repository/Home/btn_search'))
+
+WebUI.delay(3)

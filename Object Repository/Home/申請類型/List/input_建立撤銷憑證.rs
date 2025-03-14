@@ -6,11 +6,15 @@
    <elementGuidId>8e109621-742b-4813-ab3f-ce1a2469ead8</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>CSS</key>
+         <value>input[value='RevokeCertificate']</value>
+      </entry>
+      <entry>
          <key>BASIC</key>
          <value>//*[@type = 'checkbox']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -19,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>591379fa-6ff2-4848-bb8b-08a5f5e4e419</webElementGuid>
+      <webElementGuid>0eee9cf3-026b-40da-969a-d6ae68c5c81c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -27,7 +31,7 @@
       <name>type</name>
       <type>Main</type>
       <value>checkbox</value>
-      <webElementGuid>7a266905-95e9-41d6-8532-694ff862c317</webElementGuid>
+      <webElementGuid>266f1954-ee32-4daf-aa31-ae9eb92d2751</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -35,7 +39,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-checkbox-input</value>
-      <webElementGuid>dbd1b905-df5a-4b8f-ad86-74c0c70b5a53</webElementGuid>
+      <webElementGuid>5be3714d-a0cc-4bf6-8281-da71d676354d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -43,7 +47,7 @@
       <name>value</name>
       <type>Main</type>
       <value>RevokeCertificate</value>
-      <webElementGuid>e09fabd6-923e-4c99-987b-b18a19585dee</webElementGuid>
+      <webElementGuid>707f38b9-a14c-4a88-a94d-55b71277508e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -51,6 +55,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/div[@class=&quot;option-container application-container&quot;]/div[@class=&quot;ant-checkbox-group vertical-style&quot;]/label[@class=&quot;ant-checkbox-wrapper ant-checkbox-group-item&quot;]/span[@class=&quot;ant-checkbox&quot;]/input[@class=&quot;ant-checkbox-input&quot;]</value>
-      <webElementGuid>f0aba845-7a6b-4c59-8850-ee7c2b831008</webElementGuid>
+      <webElementGuid>cc0ce9b5-0fdf-4812-9f0e-5c03daa52393</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
