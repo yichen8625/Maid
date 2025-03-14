@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>申請更換主域名</name>
+   <tag>搜索類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>bcb3e625-8300-4286-8f02-ccb12dd5c8bf</testCaseGuid>
+</TestCaseEntity>
