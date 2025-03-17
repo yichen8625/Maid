@@ -17,19 +17,3 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.navigateToUrl(GlobalVariable.G_URL)
-
-WebUI.maximizeWindow()
-
-WebUI.waitForPageLoad(2)
-
-'申請廳主購買'
-WebUI.click(findTestObject('Object Repository/Home/span_item'))
-
-WebUI.click(findTestObject('Object Repository/Home/Search Type/div_申請類型'))
-
-WebUI.click(findTestObject('Object Repository/Home/申請類型/input_申請類型'))
-
-WebUI.click(findTestObject('Object Repository/Home/申請類型/List/input_申請廳主購買域名'))
-
-WebUI.click(findTestObject('Object Repository/Home/btn_search'))

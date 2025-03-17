@@ -23,17 +23,17 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(2)
 
-'申請廳主購買 filter'
+'申請廳主買域名 filter'
 WebUI.click(findTestObject('Object Repository/Home/span_item'))
 
 WebUI.click(findTestObject('Object Repository/Home/Search Type/div_申請類型'))
 
 WebUI.click(findTestObject('Object Repository/Home/申請類型/input_申請類型'))
 
-WebUI.click(findTestObject('Object Repository/Home/申請類型/List/input_申請刪除域名'))
+WebUI.click(findTestObject('Object Repository/Home/申請類型/List/input_申請廳主買域名'))
 
 WebUI.click(findTestObject('Object Repository/Home/btn_search'))
 
 WebUI.delay(5)
 
-WebUI.verifyElementText(findTestObject('Object Repository/Home/td_申請類型'), '申請刪除域名')
+WebUI.verifyElementText(findTestObject('Object Repository/Home/td_申請類型'), '申請廳主買域名')
