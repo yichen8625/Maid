@@ -16,35 +16,22 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
-WebUI.navigateToUrl(GlobalVariable.G_URL)
-
-WebUI.maximizeWindow()
-
-WebUI.waitForPageLoad(2)
-
-'申請三級亂數 filter'
-WebUI.click(findTestObject('Object Repository/Home/span_item'))
-
-WebUI.click(findTestObject('Object Repository/Home/Search Type/div_申請類型'))
-
-WebUI.click(findTestObject('Object Repository/Home/申請類型/input_申請類型'))
-
-WebUI.click(findTestObject('Object Repository/Home/申請類型/List/input_申請三級亂數'))
-
-WebUI.click(findTestObject('Object Repository/Home/btn_search'))
-
-WebUI.delay(5)
-
-WebUI.verifyElementText(findTestObject('Object Repository/Home/td_申請類型'), '申請三級亂數')
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 
 
-/* 憑證申請
-WebUI.setText(findTestObject(''))
-WebUI.click(findTestObject(''))
-WebUI.delay(5)
+// 生成四位隨機數字
+def randomFourDigitInt = (int)(Math.random() * 10000)
+def formattedNumber = String.format("%04d", randomFourDigitInt)
 
-// check otp
-WebUI.setText(findTestObject(''))
-WebUI.click(findTestObject(''))
-*/
+def site_group = "dct" //站別
+String site_group_s = site_group
+println(site_group_s)
+
+def domain = site_group + formattedNumber + ".com" //域名設定
+String domain_s = domain
+println(domain_s)
+
+def web_layout = "simple"
+String web_layout_s = web_layout
+
+println "${site_group_s} - ${domain_s}"

@@ -37,3 +37,24 @@ WebUI.click(findTestObject('Object Repository/Home/btn_search'))
 WebUI.delay(5)
 
 WebUI.verifyElementText(findTestObject('Object Repository/Home/td_申請類型'), '申請廳主買域名')
+
+// 控端，廳主申請買域名
+
+def randomFourDigitInt = (int)(Math.random() * 10000); // 生成 0 到 9999 的整數
+def formattedNumber = String.format("%04d", randomFourDigitInt); // 格式化為四位數（補零）
+def newName = "test" + formattedNumber; // 拼接字符串
+println("亂數："+ newName)
+
+def value1 = 'exampleValue1'
+	test1 = 'chunkForPumb'
+def value2 = 'exampleValue2'
+def valueN = 'exampleValueN'
+
+def response = WS.sendRequest(findTestObject('Object Repository/API/Postman/申請廳主買域名', [
+	'variable1': value1,
+	'variable2': value2,
+	'variableN': valueN
+]))
+
+// 進一步處理響應
+WS.verifyResponseStatusCode(response, 200)
