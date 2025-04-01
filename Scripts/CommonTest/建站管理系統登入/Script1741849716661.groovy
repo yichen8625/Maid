@@ -16,15 +16,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.eatthepath.otp.TimeBasedOneTimePasswordGenerator
-import java.nio.charset.StandardCharsets
-import javax.crypto.Mac
-import javax.crypto.spec.SecretKeySpec
-import java.security.SecureRandom
-import java.nio.charset.StandardCharsets
-import org.apache.commons.codec.binary.Hex
-import org.apache.commons.codec.binary.Base32
+import com.eatthepath.otp.TimeBasedOneTimePasswordGenerator as TimeBasedOneTimePasswordGenerator
+import java.nio.charset.StandardCharsets as StandardCharsets
+import javax.crypto.Mac as Mac
+import javax.crypto.spec.SecretKeySpec as SecretKeySpec
+import java.security.SecureRandom as SecureRandom
+import org.apache.commons.codec.binary.Hex as Hex
+import org.apache.commons.codec.binary.Base32 as Base32
 
 WebUI.openBrowser('')
 
@@ -32,80 +30,92 @@ WebUI.navigateToUrl(GlobalVariable.G_URL)
 
 WebUI.waitForPageLoad(2)
 
-WebUI.click(findTestObject('Object Repository/Verification page/div_google_sigin'))
+WebUI.click(findTestObject('Object Repository/Verification page/div_google_sigin'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.setText(findTestObject('Object Repository/Verification page/input_email'), account)
+WebUI.setText(findTestObject('Object Repository/Verification page/input_email'), account, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Verification page/span_next'))
+WebUI.click(findTestObject('Object Repository/Verification page/span_next'), FailureHandling.CONTINUE_ON_FAILURE)
 
 //HENNGE login
 WebUI.waitForPageLoad(2)
 
-WebUI.setText(findTestObject('Object Repository/Verification page/HENNGE/input_user'), hennge_user)
+WebUI.setText(findTestObject('Object Repository/Verification page/HENNGE/input_user'), hennge_user, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Verification page/HENNGE/input_pwd'), hennge_pwd)
+WebUI.setEncryptedText(findTestObject('Object Repository/Verification page/HENNGE/input_pwd'), hennge_pwd, FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.click(findTestObject('Object Repository/Verification page/HENNGE/input_login'))
 
-def generateTOTP(String secretKey) {
-    try {
-        // Base32 解码密钥
-        Base32 base32 = new Base32()
-        byte[] decodedKey = base32.decode(secretKey)
-        
-        // 获取当前时间戳（单位：秒）
-        long time = System.currentTimeMillis() / 1000L
-        long timeWindow = time / 30L  // 每 30 秒一个时间窗口
-        
-        // 将时间窗口转换为 8 字节数组
-        byte[] timeBytes = new byte[8]
-        for (int i = 7; i >= 0; i--) {
-            timeBytes[i] = (byte) (timeWindow & 0xFF)
-            timeWindow >>= 8
-        }
-        
-        // 使用 HMAC-SHA1 算法计算哈希
-        Mac mac = Mac.getInstance("HmacSHA1")
-        SecretKeySpec secretKeySpec = new SecretKeySpec(decodedKey, "HmacSHA1")
-        mac.init(secretKeySpec)
-        byte[] hash = mac.doFinal(timeBytes)
-        
-        // 输出哈希值（可选，用于调试）
-        println("哈希值: " + Hex.encodeHexString(hash))
-        
-        // 动态截断方法，获取最后的 TOTP
-        int offset = hash[19] & 0xF
-        int otp = (hash[offset] & 0x7F) << 24
-        otp |= (hash[offset + 1] & 0xFF) << 16
-        otp |= (hash[offset + 2] & 0xFF) << 8
-        otp |= (hash[offset + 3] & 0xFF)
-        
-        // 获取 TOTP 的最后 6 位数字
-        otp = otp % 1000000
-        
-        return String.format("%06d", otp)  // 补齐 6 位数字
-    } catch (Exception e) {
-        e.printStackTrace()
-    }
-    return null
-}
-
+// Base32 解码密钥
+// 获取当前时间戳（单位：秒）
+// 每 30 秒一个时间窗口
+// 将时间窗口转换为 8 字节数组
+// 使用 HMAC-SHA1 算法计算哈希
+// 输出哈希值（可选，用于调试）
+// 动态截断方法，获取最后的 TOTP
+// 获取 TOTP 的最后 6 位数字
+// 补齐 6 位数字
 // secretkey 
-String secretKey = "JVMXSSLPMNWEGWBZOJAU6MKLGY"  // 这应该是你实际的 Base32 密钥
+String secretKey = 'JVMXSSLPMNWEGWBZOJAU6MKLGY' // 这应该是你实际的 Base32 密钥
 
 // 打印 TOTP
 String totp = generateTOTP(secretKey)
-println("生成的 TOTP: " + totp)
 
-WebUI.setText(findTestObject('Object Repository/Verification page/HENNGE/input_totp'), totp)
+println('生成的 TOTP: ' + totp)
 
-WebUI.click(findTestObject('Object Repository/Verification page/HENNGE/input_submit'))
+WebUI.setText(findTestObject('Object Repository/Verification page/HENNGE/input_totp'), totp, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Verification page/btn_keep'))
+WebUI.click(findTestObject('Object Repository/Verification page/HENNGE/input_submit'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Verification page/btn_keep_ll'))
+WebUI.click(findTestObject('Object Repository/Verification page/btn_keep'), FailureHandling.CONTINUE_ON_FAILURE)
 
+WebUI.click(findTestObject('Object Repository/Verification page/btn_keep_ll'), FailureHandling.CONTINUE_ON_FAILURE)
 
+def generateTOTP(String secretKey) {
+    try {
+        Base32 base32 = new Base32()
 
+        byte[] decodedKey = base32.decode(secretKey)
 
+        long time = System.currentTimeMillis() / 1000
+
+        long timeWindow = time / 30
+
+        byte[] timeBytes = new byte[8]
+
+        for (int i = 7; i >= 0; i--) {
+            (timeBytes[i]) = ((timeWindow & 255) as byte)
+
+            timeWindow >>= 8
+        }
+        
+        Mac mac = Mac.getInstance('HmacSHA1')
+
+        SecretKeySpec secretKeySpec = new SecretKeySpec(decodedKey, 'HmacSHA1')
+
+        mac.init(secretKeySpec)
+
+        byte[] hash = mac.doFinal(timeBytes)
+
+        println('哈希值: ' + Hex.encodeHexString(hash))
+
+        int offset = (hash[19]) & 15
+
+        int otp = ((hash[offset]) & 127) << 24
+
+        otp |= (((hash[(offset + 1)]) & 255) << 16)
+
+        otp |= (((hash[(offset + 2)]) & 255) << 8)
+
+        otp |= ((hash[(offset + 3)]) & 255)
+
+        otp = (otp % 1000000)
+
+        return String.format('%06d', otp)
+    }
+    catch (Exception e) {
+        e.printStackTrace()
+    } 
+    
+    return null
+}
 

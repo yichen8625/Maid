@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>span_待處理</name>
+   <tag></tag>
+   <elementGuidId>7dc31c07-9105-45db-b3ba-3f39b11d2b8a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/section/main/div[2]/div/div[4]/div/div/label/span[2]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>label.ant-checkbox-wrapper.ant-checkbox-wrapper-checked.ant-checkbox-group-item > span:nth-of-type(2)</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>d96f009f-d3f7-4993-9649-b871fb3be2ef</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>待處理</value>
+      <webElementGuid>5a415c68-0fb2-46db-b811-ca36a77cf595</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/div[@class=&quot;option-container application-container&quot;]/div[@class=&quot;ant-checkbox-group vertical-style&quot;]/label[@class=&quot;ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-group-item&quot;]/span[2]</value>
+      <webElementGuid>ae37973d-eead-4a6d-b9af-8b1d90c53e62</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/main/div[2]/div/div[4]/div/div/label/span[2]</value>
+      <webElementGuid>9579df70-cadd-4723-8b44-55da9ba0290e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='全選'])[1]/following::span[3]</value>
+      <webElementGuid>a7500d8c-f7c6-4782-8538-9bcaad521c95</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='申請狀態'])[1]/following::span[6]</value>
+      <webElementGuid>c9f04685-2cf9-4a8b-9cec-2055b8371850</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='處理中'])[1]/preceding::span[3]</value>
+      <webElementGuid>dfcd5593-79d5-4095-9527-fd6a2b17f63c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='已完成'])[1]/preceding::span[6]</value>
+      <webElementGuid>ffee04b0-fb19-40f1-a307-dfbfbd96daf0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='待處理']/parent::*</value>
+      <webElementGuid>b045aa87-0446-4315-99bd-e67bc88f82a0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[4]/div/div/label/span[2]</value>
+      <webElementGuid>57709320-6ffc-4417-9671-81826de022fe</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = '待處理' or . = '待處理')]</value>
+      <webElementGuid>b2ffbb0d-b592-4bfb-95a7-57ab9e16aabf</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

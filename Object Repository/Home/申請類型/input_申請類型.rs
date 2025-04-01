@@ -6,12 +6,12 @@
    <elementGuidId>c0fedec3-0e3c-43ed-826a-08fd9d12c816</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>input.ant-input.search-input</value>
-      </entry>
-      <entry>
          <key>BASIC</key>
          <value>//*[@placeholder = '請選擇申請類型' and @type = 'text']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>input.ant-input.search-input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>
@@ -23,7 +23,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>aec341a9-3ed8-46b4-a4c5-b9a5afba2551</webElementGuid>
+      <webElementGuid>d1a7e45c-954a-4881-a816-4a441837f143</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -31,7 +31,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ant-input search-input</value>
-      <webElementGuid>294c9c58-7f60-4e10-98e6-fe4571da9dd8</webElementGuid>
+      <webElementGuid>b71839f3-de14-4819-88ef-6a0f788dfa8f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -39,7 +39,7 @@
       <name>placeholder</name>
       <type>Main</type>
       <value>請選擇申請類型</value>
-      <webElementGuid>5d60f4c4-479f-4dc1-a4c0-5b98d55f8029</webElementGuid>
+      <webElementGuid>969c0500-aa55-493e-87e2-489da82cfd83</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -47,7 +47,7 @@
       <name>type</name>
       <type>Main</type>
       <value>text</value>
-      <webElementGuid>066ce59b-396e-4aa9-b606-236d7ea10ef0</webElementGuid>
+      <webElementGuid>fb1a2dd2-3319-4b6d-9e97-f85e1143101c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -55,6 +55,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout ant-layout-has-sider&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;search-container&quot;]/div[@class=&quot;search-option-block&quot;]/input[@class=&quot;ant-input search-input&quot;]</value>
-      <webElementGuid>cbd1a285-e408-41a9-9098-782053aafd40</webElementGuid>
+      <webElementGuid>11f0c161-527b-4626-af64-59ee90850817</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

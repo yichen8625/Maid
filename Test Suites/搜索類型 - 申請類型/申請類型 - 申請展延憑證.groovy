@@ -64,3 +64,8 @@ def tearDownTestCase() {
  * References:
  * Groovy tutorial page: http://docs.groovy-lang.org/next/html/documentation/
  */
+
+/* TestObject on each@ checkout the sprint 
+1. check business logic confus
+2. executeJavaScript chunk fon Arrays => openBrowser CI/Cd operation by gitlab
+*/

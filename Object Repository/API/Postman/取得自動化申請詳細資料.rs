@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>申請廳主買域名</name>
+   <name>取得自動化申請詳細資料</name>
    <tag></tag>
-   <elementGuidId>d45f8534-87f6-4c34-b7b6-96ec7c94f7d3</elementGuidId>
+   <elementGuidId>c9c44a1a-96bb-4d6e-91fd-6b082645fd21</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
@@ -11,27 +11,23 @@
    <connectionTimeout>-1</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
-   <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;domain\&quot;: \&quot;qatest${RANDOMNUM}.com\&quot;,\n  \&quot;hall_name\&quot;: \&quot;DCTEST測試環境@dct\&quot;,\n  \&quot;site_group\&quot;: \&quot;dct\&quot;,\n  \&quot;force_binding\&quot;: true,\n  \&quot;web_layout\&quot;: \&quot;normal\&quot;,\n  \&quot;apply_certificate\&quot;: true,\n  \&quot;apply_third_level_random\&quot;: false,\n  \&quot;verify_mode\&quot;: \&quot;none\&quot;,\n  \&quot;txt\&quot;: \&quot;\&quot;,\n  \&quot;company_maintenance\&quot;: true,\n  \&quot;domain_provider\&quot;: \&quot;DCTEST測試環境@dct\&quot;,\n  \&quot;provider_account\&quot;: \&quot;\&quot;,\n  \&quot;provider_password\&quot;: \&quot;\&quot;\n}&quot;,
-  &quot;contentType&quot;: &quot;application/json&quot;,
-  &quot;charset&quot;: &quot;UTF-8&quot;
-}</httpBodyContent>
-   <httpBodyType>text</httpBodyType>
+   <httpBodyContent></httpBodyContent>
+   <httpBodyType></httpBodyType>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>accept</name>
+      <name>Accept</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>e1ea3c6a-ba4d-44b2-b0bc-9eb24853a13a</webElementGuid>
+      <webElementGuid>88d52d25-9039-431d-b980-6073ee4861d1</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>X-API-Key</name>
       <type>Main</type>
-      <value>${PF_KEY}</value>
-      <webElementGuid>43b91ec1-d627-4779-9679-751815912600</webElementGuid>
+      <value>${ADM_KEY}</value>
+      <webElementGuid>d0898856-872f-40ca-9f0b-a223ad09fe61</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
@@ -39,14 +35,14 @@
       <name>Content-Type</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>b76ede40-32e4-48ed-bcf1-ff9e015083ce</webElementGuid>
+      <webElementGuid>d8085c0e-0c37-4fd7-b3a4-25ffdb776cb4</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>9.7.4</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
-   <restRequestMethod>POST</restRequestMethod>
-   <restUrl>${DEV}/workflow_api/pf/application/purchase_domain/customer</restUrl>
+   <restRequestMethod>GET</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/adm/workflows/${WORKFLOW_ID}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -58,23 +54,23 @@
    <variables>
       <defaultValue>GlobalVariable.DEV</defaultValue>
       <description></description>
-      <id>d38f3b3a-7c38-4509-b241-61c61ad839a4</id>
+      <id>8d20b491-3ba9-4560-8570-2ff69cd3650c</id>
       <masked>false</masked>
       <name>DEV</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.PF_KEY</defaultValue>
+      <defaultValue>GlobalVariable.WORKFLOW_ID</defaultValue>
       <description></description>
-      <id>bad78502-f201-49aa-8133-910f5e092217</id>
+      <id>e828af70-56ae-4e6d-99de-94a5de9ad4e3</id>
       <masked>false</masked>
-      <name>PF_KEY</name>
+      <name>WORKFLOW_ID</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.RANDOMNUM</defaultValue>
+      <defaultValue>GlobalVariable.ADM_KEY</defaultValue>
       <description></description>
-      <id>f495f5e2-8702-4bac-bfa2-46ddea7013e4</id>
+      <id>cab9183f-91b3-4367-8791-47eaa97b9eb9</id>
       <masked>false</masked>
-      <name>RANDOMNUM</name>
+      <name>ADM_KEY</name>
    </variables>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
