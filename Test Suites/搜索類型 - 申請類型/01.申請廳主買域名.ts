@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>New Test Suite</name>
+   <name>01.申請廳主買域名</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,9 +10,9 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>4c0956de-95c6-4236-a33e-7bdb58caa284</testSuiteGuid>
+   <testSuiteGuid>a73e0f47-cde4-4bbb-8365-aead72b8250d</testSuiteGuid>
    <testCaseLink>
-      <guid>faea40da-96f6-4b9b-91fb-cbb9ee861a02</guid>
+      <guid>287c5737-4199-455a-81c8-e1161509c2db</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CommonTest/建站管理系統登入</testCaseId>
@@ -37,7 +37,7 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>41e8473f-b213-49a7-85ad-68c95a4bf459</guid>
+      <guid>7ed9d7b7-5efa-494a-9c46-d63987383d6d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/搜索類型-申請類型/01.申請廳主買域名</testCaseId>

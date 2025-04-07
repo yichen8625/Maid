@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>申請三級亂數</name>
-   <tag>搜索類型</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>58d81a3f-1ef8-4503-a738-130192c10c22</testCaseGuid>
-</TestCaseEntity>

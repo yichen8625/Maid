@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>New Test Suite</name>
+   <name>08.申請抗封鎖目標</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,9 +10,9 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>4c0956de-95c6-4236-a33e-7bdb58caa284</testSuiteGuid>
+   <testSuiteGuid>f4a4a1e4-7723-4e74-b960-ae740cc6053c</testSuiteGuid>
    <testCaseLink>
-      <guid>faea40da-96f6-4b9b-91fb-cbb9ee861a02</guid>
+      <guid>9da5a29a-fd3c-4323-b936-0fde311f9e98</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CommonTest/建站管理系統登入</testCaseId>
@@ -37,22 +37,10 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>41e8473f-b213-49a7-85ad-68c95a4bf459</guid>
+      <guid>eaea57fe-2c6c-47f4-b8bc-45e303a57d38</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/搜索類型-申請類型/01.申請廳主買域名</testCaseId>
+      <testCaseId>Test Cases/搜索類型-申請類型/08.申請抗封鎖目標</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>56248b3e-3bab-4ffc-982e-8f95009505ac</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>bea1e261-5537-4816-abfe-8a2e0d9e9671</variableId>
-      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

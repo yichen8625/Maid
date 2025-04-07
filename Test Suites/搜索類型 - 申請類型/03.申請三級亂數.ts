@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>New Test Suite</name>
+   <name>03.申請三級亂數</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,9 +10,9 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>4c0956de-95c6-4236-a33e-7bdb58caa284</testSuiteGuid>
+   <testSuiteGuid>112fd9b5-606f-4557-83e6-ac63333d2947</testSuiteGuid>
    <testCaseLink>
-      <guid>faea40da-96f6-4b9b-91fb-cbb9ee861a02</guid>
+      <guid>f2a0b200-4f5d-428e-ad6f-96d5fb7c584a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/CommonTest/建站管理系統登入</testCaseId>
@@ -37,22 +37,10 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>41e8473f-b213-49a7-85ad-68c95a4bf459</guid>
+      <guid>539c4bfe-4ec5-4c8c-bf3c-2410d265ece0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/搜索類型-申請類型/01.申請廳主買域名</testCaseId>
+      <testCaseId>Test Cases/搜索類型-申請類型/03.申請三級亂數</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>56248b3e-3bab-4ffc-982e-8f95009505ac</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>bea1e261-5537-4816-abfe-8a2e0d9e9671</variableId>
-      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

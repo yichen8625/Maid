@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>02.申請購買憑證</name>
+   <tag>搜索類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>739046c2-f09c-4044-9ed9-77c76d9d9953</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>177c2aaa-5905-477b-914c-29ee98e3d0fb</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>177c2aaa-5905-477b-914c-29ee98e3d0fb</id>
+      <masked>false</masked>
+      <name>workflow_id</name>
+   </variable>
+</TestCaseEntity>

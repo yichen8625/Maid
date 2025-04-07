@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>07.申請更換憑證商</name>
+   <tag>搜索類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>78647d61-e534-497b-a286-27f7d0c838e7</testCaseGuid>
+</TestCaseEntity>

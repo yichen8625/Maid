@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>申請抗劫持目標</name>
-   <tag>搜索類型</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>a7f958ae-9e2a-4e00-bd6a-68623fcf9162</testCaseGuid>
-</TestCaseEntity>
