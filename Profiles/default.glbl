@@ -89,4 +89,9 @@
       <initValue>''</initValue>
       <name>DOMAIN</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>RANDOMTEXT</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

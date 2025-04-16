@@ -15,7 +15,7 @@
       <guid>287c5737-4199-455a-81c8-e1161509c2db</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/CommonTest/建站管理系統登入</testCaseId>
+      <testCaseId>Test Cases/Login/建站管理系統登入</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
          <testDataLinkId></testDataLinkId>

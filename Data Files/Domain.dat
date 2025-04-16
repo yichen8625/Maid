@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Domain</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>cfcb1c84-851b-4ce6-a1d9-c1ee39f58406</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>InternalData</driver>
+   <data>null null null null null null null null null null null null null</data>
+   <data>null DCTEST%E6%B8%AC%E8%A9%A6%E7%92%B0%E5%A2%83%40dct dct true normal true false none null true DCTEST%E6%B8%AC%E8%A9%A6%E7%92%B0%E5%A2%83 null null</data>
+   <data>null null null null null null null null null null null null null</data>
+   <data>null null null null null null null null null null null null null</data>
+   <data>null null null null null null null null null null null null null</data>
+   <data>null null null null null null null null null null null null null</data>
+   <internalDataColumns>
+      <columnIndex>0</columnIndex>
+      <name>domain</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>1</columnIndex>
+      <name>hall_name</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>2</columnIndex>
+      <name>site_group</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>3</columnIndex>
+      <name>force_binding</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>4</columnIndex>
+      <name>web_layout</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>5</columnIndex>
+      <name>apply_certificate</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>6</columnIndex>
+      <name>apply_third_level_random</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>7</columnIndex>
+      <name>verify_mode</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>8</columnIndex>
+      <name>txt</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>9</columnIndex>
+      <name>company_maintenance</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>10</columnIndex>
+      <name>domain_provider</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>11</columnIndex>
+      <name>provider_account</name>
+      <size>6</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>12</columnIndex>
+      <name>provider_password</name>
+      <size>6</size>
+   </internalDataColumns>
+   <isInternalPath>false</isInternalPath>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

@@ -19,22 +19,19 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.testobject.RequestObject as RequestObject
 import groovy.json.JsonSlurper
 import com.kms.katalon.core.util.KeywordUtil
-
-
+import java.util.Random
 
 
 '申請廳主買域名'
-
 // 產生隨機數字並存入 GlobalVariable
 int randomNum = new Random().nextInt(10000)  // 產生一個 0 到 9999 之間的隨機數字
 GlobalVariable.RANDOMNUM = randomNum
-
 
 // 發送申請廳主買域名請求
 def response = WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/申請廳主買域名'))
 WS.verifyResponseStatusCode(response, 201) // 檢查 HTTP 狀態碼是否為 201
 
-// 提取申請廳主買域名請求 workflow_id
+// 提取申請廳主買域名 workflow_id
 def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
 def workflow_id = jsonResponse.workflow_id
 GlobalVariable.WORKFLOW_ID = workflow_id
@@ -68,7 +65,6 @@ def requiredFields = [
     "CheckPurchaseDeployCertificateStatus",
     "RecheckCert"
 ]
-
 // 檢查每個欄位是否存在且不為 null 或 空
 requiredFields.each { field ->
     def job = jsonResponsell.find { it.get('name') == field }
@@ -106,8 +102,6 @@ jsonResponsell.each { job ->
         GlobalVariable.RecheckCert_job_id = job.job_id
     }
 }
-
-
 println "CheckDomainBlocked_job_id: ${GlobalVariable.CheckDomainBlocked_job_id}"
 println "VerifyTLD_job_id: ${GlobalVariable.VerifyTLD_job_id}"
 println "UpdateNameServer_job_id: ${GlobalVariable.UpdateNameServer_job_id}"
@@ -120,12 +114,14 @@ println "CheckPurchaseDeployCertificateStatus_job_id: ${GlobalVariable.CheckPurc
 println "RecheckCert_job_id: ${GlobalVariable.RecheckCert_job_id}"
 
 
+
 '導轉 workflow detail 頁'
 WebUI.navigateToUrl(GlobalVariable.G_URL+"/#/auto_detail/"+GlobalVariable.WORKFLOW_ID)
 
 WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(2)
+
 
 
 '申請資訊驗證'
@@ -160,7 +156,6 @@ WebUI.executeJavaScript('''
     document.head.appendChild(style);
 ''', [], FailureHandling.CONTINUE_ON_FAILURE)
 
-// 设置 toastr 的位置居中
 WebUI.executeJavaScript('''
        toastr.options = {
            "positionClass": "toast-center-top",
@@ -174,7 +169,7 @@ WebUI.executeJavaScript('''
 
 WebUI.takeFullPageScreenshot()
 
-WebUI.delay(1)
+
 
 '異動紀錄頁驗證'
 WebUI.click(findTestObject('Object Repository/Workflow Detail/div_record'))
@@ -215,3 +210,4 @@ if (pageText.contains("- 失敗")) {
 }
 
 WebUI.takeFullPageScreenshot()
+

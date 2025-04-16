@@ -45,17 +45,8 @@ WebUI.setEncryptedText(findTestObject('Object Repository/Verification page/HENNG
 
 WebUI.click(findTestObject('Object Repository/Verification page/HENNGE/input_login'))
 
-// Base32 解码密钥
-// 获取当前时间戳（单位：秒）
-// 每 30 秒一个时间窗口
-// 将时间窗口转换为 8 字节数组
-// 使用 HMAC-SHA1 算法计算哈希
-// 输出哈希值（可选，用于调试）
-// 动态截断方法，获取最后的 TOTP
-// 获取 TOTP 的最后 6 位数字
-// 补齐 6 位数字
 // secretkey 
-String secretKey = 'JVMXSSLPMNWEGWBZOJAU6MKLGY' // 这应该是你实际的 Base32 密钥
+String secretKey = 'JVMXSSLPMNWEGWBZOJAU6MKLGY' 
 
 // 打印 TOTP
 String totp = generateTOTP(secretKey)

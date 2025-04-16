@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>申請購買與部屬憑證</name>
+   <name>取得自動化工作項目資料</name>
    <tag></tag>
-   <elementGuidId>b4b666db-f813-496a-b8e1-73d07ce9360a</elementGuidId>
+   <elementGuidId>5e7bdec1-f5d0-4c4f-bdc3-42e146b8870e</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
-   <autoUpdateContent>false</autoUpdateContent>
+   <autoUpdateContent>true</autoUpdateContent>
    <connectionTimeout>-1</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
-   <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;domain\&quot;: \&quot;veb67.com\&quot;,\n  \&quot;site_group\&quot;: \&quot;dct\&quot;\n}&quot;,
-  &quot;contentType&quot;: &quot;application/json&quot;,
-  &quot;charset&quot;: &quot;UTF-8&quot;
-}</httpBodyContent>
-   <httpBodyType>text</httpBodyType>
+   <httpBodyContent></httpBodyContent>
+   <httpBodyType></httpBodyType>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>accept</name>
+      <name>Accept</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>3d882abd-fd79-4c5e-8af9-35dd8ea84de8</webElementGuid>
+      <webElementGuid>e50ba0bb-9fd1-484e-a8b5-89f5325c65ab</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>x-api-key</name>
+      <name>X-API-Key</name>
       <type>Main</type>
-      <value>${PF_KEY}</value>
-      <webElementGuid>e9e3cf4d-f972-49fe-a37c-b9a9de4404e3</webElementGuid>
+      <value>${ADM_KEY}</value>
+      <webElementGuid>a4deb966-f1e7-4e5b-beaa-05633655cbe1</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
@@ -39,14 +35,14 @@
       <name>Content-Type</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>c9378945-4815-4666-bb8a-b34955c4ebf1</webElementGuid>
+      <webElementGuid>768bbb23-908f-476d-8143-94e04969535c</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>9.7.4</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
-   <restRequestMethod>POST</restRequestMethod>
-   <restUrl>${DEV}/workflow_api/pf/application/purchase_certificate</restUrl>
+   <restRequestMethod>GET</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/adm/workflows/${WORKFLOW_ID}/jobs</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -58,36 +54,23 @@
    <variables>
       <defaultValue>GlobalVariable.DEV</defaultValue>
       <description></description>
-      <id>49cf1c90-c199-49de-ae59-ea39946bab5f</id>
+      <id>30dc0c1c-983b-4630-a659-618f45da2b70</id>
       <masked>false</masked>
       <name>DEV</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.PF_KEY</defaultValue>
+      <defaultValue>GlobalVariable.WORKFLOW_ID</defaultValue>
       <description></description>
-      <id>9be45d29-fc70-459f-bbcf-c2c96573da1b</id>
+      <id>ddb2e54c-8f8f-4932-b9dd-86add792969e</id>
       <masked>false</masked>
-      <name>PF_KEY</name>
+      <name>WORKFLOW_ID</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.DOMAIN</defaultValue>
+      <defaultValue>GlobalVariable.ADM_KEY</defaultValue>
       <description></description>
-      <id>244da616-ac2f-41ff-8ed6-53b3175ff528</id>
+      <id>aa0941ed-27df-4b2c-a50e-b6913c2c0ded</id>
       <masked>false</masked>
-      <name>DOMAIN</name>
+      <name>ADM_KEY</name>
    </variables>
-   <verificationScript>import static org.assertj.core.api.Assertions.*
-
-import com.kms.katalon.core.testobject.RequestObject
-import com.kms.katalon.core.testobject.ResponseObject
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webservice.verification.WSResponseManager
-
-import groovy.json.JsonSlurper
-import internal.GlobalVariable as GlobalVariable
-
-RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
-
-ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
