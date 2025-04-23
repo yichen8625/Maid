@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
-   <description>google account</description>
-   <name>input_email</name>
+   <description></description>
+   <name>div_google</name>
    <tag></tag>
-   <elementGuidId>478860b2-623a-4b14-a4a3-3b2bd202a8cd</elementGuidId>
+   <elementGuidId>c1a84a7d-d6e7-4f6d-b741-5ed6feb1c085</elementGuidId>
    <selectorCollection>
       <entry>
          <key>CSS</key>
-         <value>#identifierId</value>
+         <value>div.abcRioButtonContentWrapper</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>

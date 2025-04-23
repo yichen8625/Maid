@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>更改RecheckDomainResolution 狀態</name>
+   <tag></tag>
+   <elementGuidId>dab7fe37-ee8b-4a2e-b5a1-92ef8b8699b1</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>true</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n    \&quot;id\&quot;:${RecheckDomainResolution_job_id},\n    \&quot;status\&quot;:\&quot;success\&quot;\n    }&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Accept</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>b8894b88-f177-4ff9-a13c-5f42ab5d0f67</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>X-API-Key</name>
+      <type>Main</type>
+      <value>${ADM_KEY}</value>
+      <webElementGuid>cc45516d-0bb3-47dc-879b-1c9da64da5b8</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>f7f6a41f-9428-4abc-9112-1b268483abb1</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>9.7.4</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path></path>
+   <restRequestMethod>PATCH</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/adm/jobs/status</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <soapServiceFunction></soapServiceFunction>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.DEV</defaultValue>
+      <description></description>
+      <id>bb86128d-49a5-4850-8c19-6cf9a5970116</id>
+      <masked>false</masked>
+      <name>DEV</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.ADM_KEY</defaultValue>
+      <description></description>
+      <id>918db1be-4024-4d84-9d15-21063c082d72</id>
+      <masked>false</masked>
+      <name>ADM_KEY</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.RecheckDomainResolution_job_id</defaultValue>
+      <description></description>
+      <id>fac531c3-69da-488a-86c6-8b5bde9decc7</id>
+      <masked>false</masked>
+      <name>RecheckDomainResolution_job_id</name>
+   </variables>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>申請更換一對一的域名</name>
-   <tag>搜索類型</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>31219193-4aa9-461d-9e03-f93c2c316694</testCaseGuid>
-</TestCaseEntity>

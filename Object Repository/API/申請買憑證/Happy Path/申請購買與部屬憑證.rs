@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>申請購買與部屬憑證</name>
+   <tag></tag>
+   <elementGuidId>04e714e4-7ffb-4113-b200-932d85b39142</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>true</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n  \&quot;domain\&quot;: \&quot;${DOMAIN}\&quot;,\n  \&quot;site_group\&quot;: \&quot;dctest\&quot;\n}&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>accept</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>f59fb0cd-c7c7-4971-9de5-229015311b84</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>x-api-key</name>
+      <type>Main</type>
+      <value>${PF_KEY}</value>
+      <webElementGuid>e65a3f03-d385-4197-98ab-13c896b1d755</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>504ad5d1-8190-4a21-afbe-4463d82c0001</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>9.7.4</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path></path>
+   <restRequestMethod>POST</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/pf/application/purchase_certificate</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <soapServiceFunction></soapServiceFunction>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.DEV</defaultValue>
+      <description></description>
+      <id>e38fe5b9-f696-418f-9393-d919aa808772</id>
+      <masked>false</masked>
+      <name>DEV</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.PF_KEY</defaultValue>
+      <description></description>
+      <id>9d75a6f8-5d62-4cad-84fe-1f522de24c7d</id>
+      <masked>false</masked>
+      <name>PF_KEY</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.DOMAIN</defaultValue>
+      <description></description>
+      <id>e25e0701-58d8-4601-8575-14f73bb10cc7</id>
+      <masked>false</masked>
+      <name>DOMAIN</name>
+   </variables>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>

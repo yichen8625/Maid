@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>申請廳主買域名</name>
+   <tag>搜索類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ca93ea5a-8ac0-43f6-a7f0-b9a490f3cc09</testCaseGuid>
+</TestCaseEntity>

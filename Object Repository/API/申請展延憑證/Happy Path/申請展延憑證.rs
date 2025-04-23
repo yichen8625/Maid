@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>申請展延憑證</name>
+   <tag></tag>
+   <elementGuidId>17304b94-c55c-486c-8995-ba1862827830</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>true</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n  \&quot;domain\&quot;: \&quot;${DOMAIN}\&quot;,\n  \&quot;site_group\&quot;: \&quot;dctest\&quot;\n}&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>accept</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>854cf97f-088d-431f-a07c-d64cd782bbf7</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>x-api-key</name>
+      <type>Main</type>
+      <value>${PF_KEY}</value>
+      <webElementGuid>54bec4ce-a7c9-45e8-9dce-fe672de95219</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>af572cb0-a79c-427d-984b-d21c82c58540</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>9.7.4</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path></path>
+   <restRequestMethod>POST</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/pf/application/renew_certificate</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <soapServiceFunction></soapServiceFunction>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.DEV</defaultValue>
+      <description></description>
+      <id>8bcebe45-01a3-44a4-a02f-7cf75d333457</id>
+      <masked>false</masked>
+      <name>DEV</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.PF_KEY</defaultValue>
+      <description></description>
+      <id>d62a4e74-d999-4d13-ba6a-bb3ffd6b36fe</id>
+      <masked>false</masked>
+      <name>PF_KEY</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.DOMAIN</defaultValue>
+      <description></description>
+      <id>dac02912-18af-4321-8f60-f2621a5f4631</id>
+      <masked>false</masked>
+      <name>DOMAIN</name>
+   </variables>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>06.申請轉移憑證</name>
-   <tag>搜索類型</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>9e9a8958-9244-4f06-9fa6-5b3e9bb9b9b3</testCaseGuid>
-</TestCaseEntity>

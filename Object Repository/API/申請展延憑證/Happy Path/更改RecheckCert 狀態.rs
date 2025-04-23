@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>更改RecheckCert 狀態</name>
+   <tag></tag>
+   <elementGuidId>61c95949-63a0-4852-a430-3dafbc574f0d</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>true</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n    \&quot;id\&quot;:${RecheckCert_job_id},\n    \&quot;status\&quot;:\&quot;success\&quot;\n    }&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Accept</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>b04fed31-080a-4403-ac7b-e881d580e53a</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>X-API-Key</name>
+      <type>Main</type>
+      <value>${ADM_KEY}</value>
+      <webElementGuid>d8460473-415b-4723-8c48-b6889d8c31b7</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>7fbd6949-762a-4a0e-a355-aa974d385634</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>9.7.4</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path></path>
+   <restRequestMethod>PATCH</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/adm/jobs/status</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <soapServiceFunction></soapServiceFunction>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.DEV</defaultValue>
+      <description></description>
+      <id>9a7a35f7-9021-4bbf-a0a3-a7cba0307155</id>
+      <masked>false</masked>
+      <name>DEV</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.ADM_KEY</defaultValue>
+      <description></description>
+      <id>692043ad-1e89-42e9-ae2c-e32d6c99deaf</id>
+      <masked>false</masked>
+      <name>ADM_KEY</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.RecheckCert_job_id</defaultValue>
+      <description></description>
+      <id>519f0e44-2fa5-4761-9ce7-bc01592a3620</id>
+      <masked>false</masked>
+      <name>RecheckCert_job_id</name>
+   </variables>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>

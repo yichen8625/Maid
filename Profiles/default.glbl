@@ -5,19 +5,19 @@
    <tag></tag>
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
-      <description>dev</description>
+      <description>建站管理系統</description>
       <initValue>'https://maid-cloud.vir999.com'</initValue>
-      <name>G_URL</name>
+      <name>G_VIR_URL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>PDNS</description>
+      <initValue>'https://pdns.vir999.com/'</initValue>
+      <name>G_PDNS_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>api domain</description>
       <initValue>'http://maid-cloud.vir999.com'</initValue>
       <name>DEV</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>RANDOMNUM</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -30,68 +30,143 @@
       <name>ADM_KEY</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請刪除域名 workflow_Id</description>
       <initValue>''</initValue>
-      <name>WORKFLOW_ID</name>
+      <name>DD_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請廳主買域名 workflow_Id</description>
       <initValue>''</initValue>
-      <name>CheckDomainBlocked_job_id</name>
+      <name>PD_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請購買與部署憑證 workflow_Id</description>
       <initValue>''</initValue>
-      <name>VerifyTLD_job_id</name>
+      <name>PC_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請展延憑證 workflow_Id</description>
       <initValue>''</initValue>
-      <name>UpdateNameServer_job_id</name>
+      <name>RC_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請三級亂數 workflow_Id</description>
       <initValue>''</initValue>
-      <name>UpdateDomainRecord_job_id</name>
+      <name>TLR_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>建立撤銷憑證 workflow_Id</description>
       <initValue>''</initValue>
-      <name>MergeErrorRecord_job_id</name>
+      <name>RVC_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請轉移憑證 workflow_Id</description>
       <initValue>''</initValue>
-      <name>RecheckDomainResolution_job_id</name>
+      <name>RUC_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請更換憑證商 workflow_Id</description>
       <initValue>''</initValue>
-      <name>RemoveTag_job_id</name>
+      <name>RCP_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請抗封鎖目標 workflow_Id</description>
       <initValue>''</initValue>
-      <name>PurchaseAndDeployCert_job_id</name>
+      <name>ABT_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請撤下抗封鎖目標 workflow_Id</description>
       <initValue>''</initValue>
-      <name>CheckPurchaseDeployCertificateStatus_job_id</name>
+      <name>DABT_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請抗劫持目標 workflow_Id</description>
       <initValue>''</initValue>
-      <name>RecheckCert_job_id</name>
+      <name>AJT_WORKFLOW_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>申請撤下抗劫持目標 workflow_Id</description>
       <initValue>''</initValue>
+      <name>DAJT_WORKFLOW_ID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>真實域名</description>
+      <initValue>'sramtest01.com'</initValue>
       <name>DOMAIN</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>RANDOMTEXT</name>
+      <name>WORKFLOW_ID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>申請類型</description>
+      <initValue>''</initValue>
+      <name>WORKFLOW_NAME</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>RANDOMNUM</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>檢查封鎖</description>
+      <initValue>''</initValue>
+      <name>CheckDomainBlocked_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>驗證頂級域名</description>
+      <initValue>''</initValue>
+      <name>VerifyTLD_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>上層設定</description>
+      <initValue>''</initValue>
+      <name>UpdateNameServer_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>設定域名解析</description>
+      <initValue>''</initValue>
+      <name>UpdateDomainRecord_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>檢查異常地區合併規則</description>
+      <initValue>''</initValue>
+      <name>MergeErrorRecord_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>複檢域名</description>
+      <initValue>''</initValue>
+      <name>RecheckDomainResolution_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>移除 Tag</description>
+      <initValue>''</initValue>
+      <name>RemoveTag_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>購買與部署憑證</description>
+      <initValue>''</initValue>
+      <name>PurchaseAndDeployCert_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>檢查購買部署憑證結果</description>
+      <initValue>''</initValue>
+      <name>CheckPurchaseDeployCertificateStatus_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>複檢三級亂數</description>
+      <initValue>''</initValue>
+      <name>RecheckCert_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>刪除解析</description>
+      <initValue>''</initValue>
+      <name>DeleteDomainRecord_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>撤銷憑證</description>
+      <initValue>''</initValue>
+      <name>RevokeCert_job_id</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

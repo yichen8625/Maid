@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>申請廳主買域名-domain 亂數</name>
+   <tag>搜索類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c1870b54-66b8-4f7b-b7b6-55fa075f3cbb</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>56248b3e-3bab-4ffc-982e-8f95009505ac</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>bea1e261-5537-4816-abfe-8a2e0d9e9671</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>56248b3e-3bab-4ffc-982e-8f95009505ac</id>
+      <masked>false</masked>
+      <name>newName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bea1e261-5537-4816-abfe-8a2e0d9e9671</id>
+      <masked>false</masked>
+      <name>workflow_id</name>
+   </variable>
+</TestCaseEntity>

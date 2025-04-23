@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>測試後刪除域名</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>525c1319-579e-4cbd-980b-8b5d75e9abf5</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>d6d41e91-293f-4bca-adff-555d22d0f623</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>70b82426-11b0-45a8-985a-8b34633bddad</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>02140afe-4796-4013-9e7e-cddb500acf1f</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'noah_chang@mail.chungyo.net'</defaultValue>
+      <description>google account</description>
+      <id>d6d41e91-293f-4bca-adff-555d22d0f623</id>
+      <masked>false</masked>
+      <name>account</name>
+   </variable>
+   <variable>
+      <defaultValue>'noah_chang'</defaultValue>
+      <description>HENNGE user</description>
+      <id>70b82426-11b0-45a8-985a-8b34633bddad</id>
+      <masked>false</masked>
+      <name>hennge_user</name>
+   </variable>
+   <variable>
+      <defaultValue>'owkcwdlq3NicdQZfnDRO1g=='</defaultValue>
+      <description>HENNGE pwd</description>
+      <id>02140afe-4796-4013-9e7e-cddb500acf1f</id>
+      <masked>false</masked>
+      <name>hennge_pwd</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>建立撤銷憑證</name>
+   <tag>搜索類型</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c9f712a7-6bc9-4cab-b3d8-01f93c40db30</testCaseGuid>
+</TestCaseEntity>

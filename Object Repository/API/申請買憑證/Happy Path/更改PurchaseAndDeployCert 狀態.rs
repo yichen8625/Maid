@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>更改PurchaseAndDeployCert 狀態</name>
+   <tag></tag>
+   <elementGuidId>4719675a-9964-4d48-b904-b9d8a22f2449</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>true</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n    \&quot;id\&quot;:${PurchaseAndDeployCert_job_id},\n    \&quot;status\&quot;:\&quot;success\&quot;\n    }&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Accept</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>375cd6e7-04a3-4641-8656-4a610a8621ef</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>X-API-Key</name>
+      <type>Main</type>
+      <value>${ADM_KEY}</value>
+      <webElementGuid>12b196b3-76e4-48e4-83af-81b4779b2915</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>322d012d-ddb6-43dc-8be9-329adbcdc92d</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>9.7.4</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path></path>
+   <restRequestMethod>PATCH</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/adm/jobs/status</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <soapServiceFunction></soapServiceFunction>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.DEV</defaultValue>
+      <description></description>
+      <id>ad2f23e4-0a1f-4c68-985a-f60773b1e885</id>
+      <masked>false</masked>
+      <name>DEV</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.ADM_KEY</defaultValue>
+      <description></description>
+      <id>4aa8344f-7f75-41e5-9ac4-a9273444efe8</id>
+      <masked>false</masked>
+      <name>ADM_KEY</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.PurchaseAndDeployCert_job_id</defaultValue>
+      <description></description>
+      <id>f1ec2b0c-6b7d-4ae1-8e9d-4aad9271246e</id>
+      <masked>false</masked>
+      <name>PurchaseAndDeployCert_job_id</name>
+   </variables>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>

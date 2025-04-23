@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>申請廳主買域名</name>
+   <tag></tag>
+   <elementGuidId>73dd9350-0231-4cbf-8a9f-69b9aef68cc3</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>true</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n  \&quot;domain\&quot;: \&quot;${DOMAIN}\&quot;, \n  \&quot;site_group\&quot;: \&quot;dctest\&quot;,\n  \&quot;force_binding\&quot;: true,\n  \&quot;web_layout\&quot;: \&quot;normal\&quot;,\n  \&quot;apply_certificate\&quot;: false,\n  \&quot;apply_third_level_random\&quot;: false,\n  \&quot;verify_mode\&quot;: \&quot;none\&quot;,\n  \&quot;txt\&quot;: \&quot;\&quot;,\n  \&quot;company_maintenance\&quot;: true,\n  \&quot;domain_provider\&quot;: \&quot;dctest\&quot;,\n  \&quot;provider_account\&quot;: \&quot;abc123\&quot;,\n  \&quot;provider_password\&quot;: \&quot;abc123456\&quot;\n}\n/* 無效憑證測試用\n{\n  \&quot;domain\&quot;: \&quot;qatest${RANDOMNUM}.com\&quot;,\n  \&quot;hall_name\&quot;: \&quot;DCTEST測試環境@dct\&quot;,\n  \&quot;site_group\&quot;: \&quot;dct\&quot;,\n  \&quot;force_binding\&quot;: true,\n  \&quot;web_layout\&quot;: \&quot;normal\&quot;,\n  \&quot;apply_certificate\&quot;: true,\n  \&quot;apply_third_level_random\&quot;: false,\n  \&quot;verify_mode\&quot;: \&quot;none\&quot;,\n  \&quot;txt\&quot;: \&quot;\&quot;,\n  \&quot;company_maintenance\&quot;: true,\n  \&quot;domain_provider\&quot;: \&quot;DCTEST測試環境@dct\&quot;,\n  \&quot;provider_account\&quot;: \&quot;\&quot;,\n  \&quot;provider_password\&quot;: \&quot;\&quot;\n}\n*/\n&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>accept</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>e3f8d8c9-8f4f-4f29-8dd4-6f07f1f9e3e3</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>X-API-Key</name>
+      <type>Main</type>
+      <value>${PF_KEY}</value>
+      <webElementGuid>7f66f5eb-1283-4758-8a64-76fba40dc9e0</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>3c3466d8-1fa7-4d0c-81ef-9cc912260280</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>9.7.4</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path></path>
+   <restRequestMethod>POST</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/pf/application/purchase_domain/customer</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <soapServiceFunction></soapServiceFunction>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.DEV</defaultValue>
+      <description></description>
+      <id>5900233e-b4e3-4454-b100-a675f36c4884</id>
+      <masked>false</masked>
+      <name>DEV</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.PF_KEY</defaultValue>
+      <description></description>
+      <id>89415419-8663-430a-8ab1-c3ad1b5b2f0c</id>
+      <masked>false</masked>
+      <name>PF_KEY</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.DOMAIN</defaultValue>
+      <description></description>
+      <id>efd561db-26c4-4bc3-b56a-f0706a6d92d6</id>
+      <masked>false</masked>
+      <name>DOMAIN</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.RANDOMNUM</defaultValue>
+      <description></description>
+      <id>ea0a4c7e-17e7-4f6a-90e6-b082edd71fae</id>
+      <masked>false</masked>
+      <name>RANDOMNUM</name>
+   </variables>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>

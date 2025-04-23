@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>08.申請抗封鎖目標</name>
-   <tag>搜索類型</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>7806b6be-0b5f-42c2-b6bb-2a5ffc49a61b</testCaseGuid>
-</TestCaseEntity>
