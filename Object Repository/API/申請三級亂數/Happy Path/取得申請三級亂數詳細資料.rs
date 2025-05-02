@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>取得自動化工作項目資料</name>
+   <name>取得申請三級亂數詳細資料</name>
    <tag></tag>
-   <elementGuidId>b114ab1b-002a-447e-95cf-bc7cdaad876c</elementGuidId>
+   <elementGuidId>9331e0e3-f317-4862-a472-08fc1aaefaa4</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
@@ -19,7 +19,7 @@
       <name>Accept</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>6ab391e6-875c-4f92-b0bc-1930b34035b8</webElementGuid>
+      <webElementGuid>221837ad-5e6a-4adc-8536-df8dab3b3bba</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
@@ -27,7 +27,7 @@
       <name>X-API-Key</name>
       <type>Main</type>
       <value>${ADM_KEY}</value>
-      <webElementGuid>879dc400-3f75-427c-ba6e-de00e5d23160</webElementGuid>
+      <webElementGuid>7ae7e4f1-8877-4555-9be0-49ebeee577d4</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
@@ -35,14 +35,14 @@
       <name>Content-Type</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>72e23a22-4acf-499e-a76a-f789bb6fb673</webElementGuid>
+      <webElementGuid>7e40488d-9878-40af-97c0-2a0117efa4a2</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>9.7.4</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>${DEV}/workflow_api/adm/workflows/${WORKFLOW_ID}/jobs</restUrl>
+   <restUrl>${DEV}/workflow_api/adm/workflows/${TLR_WORKFLOW_ID}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -54,21 +54,21 @@
    <variables>
       <defaultValue>GlobalVariable.DEV</defaultValue>
       <description></description>
-      <id>01234be7-f2ff-495a-842b-407b8c9eef41</id>
+      <id>abb4b9ce-c718-4e9b-b293-aa15af77defa</id>
       <masked>false</masked>
       <name>DEV</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.WORKFLOW_ID</defaultValue>
+      <defaultValue>GlobalVariable.TLR_WORKFLOW_ID</defaultValue>
       <description></description>
-      <id>f8842618-023e-4f85-8700-a23116fee051</id>
+      <id>f37ebc3b-01e7-4beb-b67f-c0a3d6f0f7a7</id>
       <masked>false</masked>
-      <name>WORKFLOW_ID</name>
+      <name>TLR_WORKFLOW_ID</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.ADM_KEY</defaultValue>
       <description></description>
-      <id>70441faf-9bb7-4801-b184-2fd8f5947ff8</id>
+      <id>b9bd56fd-1096-4584-ba72-8325841e8009</id>
       <masked>false</masked>
       <name>ADM_KEY</name>
    </variables>

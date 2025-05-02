@@ -169,4 +169,14 @@
       <initValue>''</initValue>
       <name>RevokeCert_job_id</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>AddThirdLevelRandom_job_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>RecheckThirdLevelRandom_job_id</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

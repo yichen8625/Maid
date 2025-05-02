@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>取得自動化申請詳細資料</name>
+   <name>更改RecheckThirdLevelRandom 狀態</name>
    <tag></tag>
-   <elementGuidId>e2832da5-bae4-4509-87a8-e94b464b0823</elementGuidId>
+   <elementGuidId>b8c13694-a2f6-4015-98cb-254b6171df37</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
@@ -11,15 +11,19 @@
    <connectionTimeout>-1</connectionTimeout>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
-   <httpBodyContent></httpBodyContent>
-   <httpBodyType></httpBodyType>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;{\n    \&quot;id\&quot;:${RecheckThirdLevelRandom_job_id},\n    \&quot;status\&quot;:\&quot;success\&quot;\n    }&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>Accept</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>d58f8813-7c2e-4845-be42-09922b11ef22</webElementGuid>
+      <webElementGuid>4bbf96e6-904d-40ca-abd6-bf556a8cf204</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
@@ -27,7 +31,7 @@
       <name>X-API-Key</name>
       <type>Main</type>
       <value>${ADM_KEY}</value>
-      <webElementGuid>875a1033-3760-4908-ad31-0ba47c0458a9</webElementGuid>
+      <webElementGuid>483c6557-d2dd-4f73-9de0-65a7c4adba2d</webElementGuid>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>false</isSelected>
@@ -35,14 +39,14 @@
       <name>Content-Type</name>
       <type>Main</type>
       <value>application/json</value>
-      <webElementGuid>bd5c8cda-274c-4e9a-bf17-a672a5556ca6</webElementGuid>
+      <webElementGuid>3eaf7600-5bf6-47b0-9d0a-7d6622cac83a</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>9.7.4</katalonVersion>
    <maxResponseSize>-1</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
-   <restRequestMethod>GET</restRequestMethod>
-   <restUrl>${DEV}/workflow_api/adm/workflows/${WORKFLOW_ID}</restUrl>
+   <restRequestMethod>PATCH</restRequestMethod>
+   <restUrl>${DEV}/workflow_api/adm/jobs/status</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -54,23 +58,23 @@
    <variables>
       <defaultValue>GlobalVariable.DEV</defaultValue>
       <description></description>
-      <id>011fa6a5-2905-48a6-a746-be72c35ae353</id>
+      <id>e04580e7-dc85-4e7d-a00b-ccf58c43db6f</id>
       <masked>false</masked>
       <name>DEV</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.WORKFLOW_ID</defaultValue>
-      <description></description>
-      <id>1f9adc0f-749d-49e9-aad8-14c252cb0e67</id>
-      <masked>false</masked>
-      <name>WORKFLOW_ID</name>
-   </variables>
-   <variables>
       <defaultValue>GlobalVariable.ADM_KEY</defaultValue>
       <description></description>
-      <id>54972e54-0d2b-46c8-ab8f-3f65fc2c53bb</id>
+      <id>4d1fa2fe-e578-4cfe-8514-9347ac60a8a0</id>
       <masked>false</masked>
       <name>ADM_KEY</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.RecheckThirdLevelRandom_job_id</defaultValue>
+      <description></description>
+      <id>7b15dee0-e006-4e20-a3e5-9e7a9f08c63d</id>
+      <masked>false</masked>
+      <name>RecheckThirdLevelRandom_job_id</name>
    </variables>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

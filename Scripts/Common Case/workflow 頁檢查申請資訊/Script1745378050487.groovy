@@ -56,6 +56,13 @@ def generateWorkflowUrl() {
         "DeleteDomain"              : GlobalVariable.DD_WORKFLOW_ID,
         "PurchaseCertificate"       : GlobalVariable.PC_WORKFLOW_ID,
 		"RenewCertificate"       : GlobalVariable.RC_WORKFLOW_ID,
+		"ApplyThirdLevelRandom"  : GlobalVariable.TLR_WORKFLOW_ID,
+		"ApplyReuseCertificate"  : GlobalVariable.RUC_WORKFLOW_ID,
+		"ApplyReplaceCertificateProvider"  : GlobalVariable.RCP_WORKFLOW_ID,
+		"ApplyAttachAntiBlockTarget"  : GlobalVariable.ABT_WORKFLOW_ID,
+		"ApplyDetachAntiBlockTarget"  : GlobalVariable.DABT_WORKFLOW_ID,
+		"ApplyAttachAntiHijackTarget"  : GlobalVariable.AJT_WORKFLOW_ID,
+		"ApplyDetachAntiHijackTarget"  : GlobalVariable.DAJT_WORKFLOW_ID
     ]
 
     def workflowName = GlobalVariable.WORKFLOW_NAME
@@ -179,157 +186,3 @@ if (pageTextll.contains("- 失敗")) {
 }
 
 WebUI.takeFullPageScreenshot()
-
-/*
-'導轉至 workflow detail 頁面'
-if (GlobalVariable.PC_WORKFLOW_ID != null) {
-	// 申請購買憑證的情況
-	WebUI.navigateToUrl(GlobalVariable.G_VIR_URL + "/#/auto_detail/" + GlobalVariable.PC_WORKFLOW_ID, FailureHandling.STOP_ON_FAILURE)
-	println("✅ 進入申請購買憑證的 workflow 詳細頁面")
-} else if (GlobalVariable.PD_WORKFLOW_ID != null) {
-	// 申請廳主買域名的情況
-	WebUI.navigateToUrl(GlobalVariable.G_VIR_URL + "/#/auto_detail/" + GlobalVariable.PD_WORKFLOW_ID, FailureHandling.STOP_ON_FAILURE)
-	println("✅ 進入申請廳主買域名的 workflow 詳細頁面")
-} else {
-	// 如果都不存在，顯示錯誤
-	println("❌ 無法找到有效的 workflow_id，請確認 GlobalVariable 設置正確")
-}
-
-WebUI.maximizeWindow()
-WebUI.waitForPageLoad(2)
-
-// 載入 jQuery 和 Toastr.js
-WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://code.jquery.com/jquery-3.6.0.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
-
-WebUI.delay(1)
-
-WebUI.executeJavaScript('var link = document.createElement("link"); link.rel = "stylesheet"; link.href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"; document.head.appendChild(link);', [], FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
-
-WebUI.delay(1)
-
-WebUI.executeJavaScript('''
-    var style = document.createElement("style");
-    style.innerHTML = `
-        .toast-center-top {
-            top: 10% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            position: fixed !important;
-            z-index: 9999;
-        }
-    `;
-    document.head.appendChild(style);
-''', [], FailureHandling.OPTIONAL)
-
-'申請資訊驗證'
-WebUI.verifyTextPresent("申請廳主買域名", true)
-
-def verifyWorkflowID(String id, String label, FailureHandling handling = FailureHandling.STOP_ON_FAILURE) {
-    if (id) {
-        // 驗證是否包含 workflow_id
-        WebUI.verifyTextPresent(id.toString(), true, handling)
-        println("✅ 驗證成功: ${label} 申請單號： ${id}")
-    } else {
-        println("⚠️ ${label} workflow_id 為空，略過驗證")
-    }
-}
-
-// 執行申請單號驗證
-verifyWorkflowID(GlobalVariable.PD_WORKFLOW_ID.toString(), "申請廳主買域名", FailureHandling.OPTIONAL)
-verifyWorkflowID(GlobalVariable.PC_WORKFLOW_ID.toString(), "申請購買與部署憑證", FailureHandling.OPTIONAL)
-
-//域名驗證
-if (GlobalVariable.DOMAIN) {
-    WebUI.verifyTextPresent(GlobalVariable.DOMAIN.toString(), true, FailureHandling.STOP_ON_FAILURE)
-    println("✅ 域名: " + GlobalVariable.DOMAIN)
-} else {
-    println("⚠️ GlobalVariable.DOMAIN 為空，無法進行驗證")
-}
-
-//申請類型驗證
-String pageTextl = WebUI.executeJavaScript("return document.body.innerText", [], FailureHandling.STOP_ON_FAILURE)
-// 定義所有可能出現的申請類型 
-List<String> applicationTypes = [
-	"申請廳主買域名",
-	"申請刪除域名",
-	"申請憑證",
-	"申請展延憑證",
-	"申請撤銷憑證",
-	"申請三級亂數",
-	"申請轉移憑證",
-	"申請更換憑證商",
-	"申請抗封鎖目標",
-	"申請撤下抗封鎖目標",
-	"申請抗劫持目標",
-	"申請撤下抗劫持目標",
-	"申請更換主域名",
-	"申請更換一對一的域名"
-]
-
-// 動態比對目前畫面是哪一個類型
-String matchedType = applicationTypes.find { type -> pageTextl?.contains(type) }
-
-if (matchedType != null) {
-	println("✅ 畫面出現的申請類型為：${matchedType}")
-	
-	WebUI.verifyTextPresent(matchedType, true, FailureHandling.STOP_ON_FAILURE)
-} else {
-	println("❗ 未匹配任何申請類型，請確認頁面是否正確載入")
-}
-
-WebUI.executeJavaScript('''
-       toastr.options = {
-           "positionClass": "toast-center-top",
-           "timeOut": "700",
-           "closeButton": false, 
-           "iconClass": "toast-success",  
-           "closeHtml": "<button>&times;</button>"
-       };
-       toastr.success("申請資訊驗證(申請單號/域名)", "Success", { "positionClass": "toast-center-top" });
-   ''', [], FailureHandling.STOP_ON_FAILURE)
-
-WebUI.takeFullPageScreenshot()
-
-
-
-'異動紀錄頁驗證'
-WebUI.click(findTestObject('Object Repository/Workflow Detail/div_record'))
-
-WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://code.jquery.com/jquery-3.6.0.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
-
-WebUI.delay(1)
-
-WebUI.executeJavaScript('var link = document.createElement("link"); link.rel = "stylesheet"; link.href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"; document.head.appendChild(link);', [], FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
-
-WebUI.delay(1)
-
-def pageTextll = WebUI.executeJavaScript('return document.body.innerText', [], FailureHandling.STOP_ON_FAILURE)
-
-if (pageTextll.contains("- 失敗")) {
-	WebUI.executeJavaScript('''
-        toastr.options = {
-            "positionClass": "toast-center-top",  
-            "timeOut": "700",  
-            "closeButton": false, 
-            "iconClass": "toast-error",  
-            "closeHtml": "<button>&times;</button>"  
-        };
-        toastr.error("異動紀錄有失敗內容", "Fail", { "positionClass": "toast-center-top" });
-    ''', [], FailureHandling.STOP_ON_FAILURE)
-} else {
-	WebUI.executeJavaScript('''
-        toastr.options = {
-            "positionClass": "toast-center-top",
-            "timeOut": "700",
-            "closeButton": false, 
-            "iconClass": "toast-success",  
-            "closeHtml": "<button>&times;</button>"
-        };
-        toastr.success("無異動紀錄失敗", "Success", { "positionClass": "toast-center-top" });
-    ''', [], FailureHandling.STOP_ON_FAILURE)
-}
-
-WebUI.takeFullPageScreenshot()
-*/

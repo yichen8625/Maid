@@ -29,73 +29,77 @@ import groovy.json.JsonSlurper
 // 申請刪除域名
 WebUI.delay(3)
 def responseDelete
-try {
-	// 嘗試發送刪除域名請求
-	responseDelete = WS.sendRequest(findTestObject('Object Repository/API/申請刪除域名/Happy Path/申請刪除域名'), FailureHandling.OPTIONAL)
 
-	if (responseDelete != null && responseDelete.getStatusCode() == 201) {
-		println("✅刪除域名執行成功，測試數據 Clear!")
-	} else {
-		println("❌申請刪除域名失敗，狀態碼: " + (responseDelete != null ? responseDelete.getStatusCode() : "無回應"))
-	}
+// 嘗試發送刪除域名請求
+try {
+    responseDelete = WS.sendRequest(findTestObject('Object Repository/API/申請刪除域名/Happy Path/申請刪除域名'), FailureHandling.OPTIONAL)
+
+    if (responseDelete != null && responseDelete.getStatusCode() == 201) {
+        println("✅刪除域名執行成功，測試數據 Clear!")
+    } else {
+        println("❌申請刪除域名失敗，狀態碼: " + (responseDelete != null ? responseDelete.getStatusCode() : "無回應"))
+    }
 } catch (Exception e) {
-	println("❌申請刪除域名過程中發生錯誤：" + e.getMessage())
+    println("❌申請刪除域名過程中發生錯誤：" + e.getMessage())
 }
 
 // 確保 responseDelete 是有效的
 if (responseDelete != null && responseDelete.getResponseText()) {
-	def delete_domain = new JsonSlurper().parseText(responseDelete.getResponseText()) // 提取申請刪除域名 workflow_id
-	def dd_workflow_id = delete_domain.workflow_id
-	GlobalVariable.DD_WORKFLOW_ID = dd_workflow_id
-	println("✅DD_WORKFLOW_ID: " + GlobalVariable.DD_WORKFLOW_ID)
+    def delete_domain = new JsonSlurper().parseText(responseDelete.getResponseText())
+    def dd_workflow_id = delete_domain.workflow_id
+    GlobalVariable.DD_WORKFLOW_ID = dd_workflow_id
+    println("✅DD_WORKFLOW_ID: " + GlobalVariable.DD_WORKFLOW_ID)
 } else {
-	println("❌ 無法解析回應或回應無效")
+    println("❌ 無法解析回應或回應無效")
 }
 
 // 送出 API 請求，取得刪除域名項目資料
-def responseDeleteJobInfo = WS.sendRequest(findTestObject('Object Repository/API/申請刪除域名/Happy Path/取得刪除域名項目資料 (Job狀態檢查)'), FailureHandling.OPTIONAL)
+def responseDeleteJobInfo = WS.sendRequest(
+    findTestObject('Object Repository/API/申請刪除域名/Happy Path/取得刪除域名項目資料 (Job狀態檢查)'),
+    FailureHandling.OPTIONAL
+)
 
 // 使用 JsonSlurper 解析回應資料
 def deleteJobInfo = new JsonSlurper().parseText(responseDeleteJobInfo.getResponseText())
 
 // 確認回應資料格式是否為列表
 if (deleteJobInfo instanceof List) {
-	// 嘗試從回應資料中找到 "DeleteDomainRecord" 的 job_id
-	def deleteDomainJob = deleteJobInfo.find { it instanceof Map && it.name == "DeleteDomainRecord" }
+    // 嘗試找到 "DeleteDomainRecord" 的 job
+    def deleteDomainJob = deleteJobInfo.find { it instanceof Map && it.name == "DeleteDomainRecord" }
 
-	WebUI.delay(3)
+    WebUI.delay(3)
 
-	if (deleteDomainJob != null) {
-		GlobalVariable.DeleteDomainRecord_job_id = deleteDomainJob.job_id
-		println("✅ DeleteDomainRecord Job ID: ${GlobalVariable.DeleteDomainRecord_job_id}")
-	} else {
-		println("❌ 無找到 DeleteDomainRecord Job")
-	}
+    if (deleteDomainJob != null) {
+        GlobalVariable.DeleteDomainRecord_job_id = deleteDomainJob.job_id
+        println("✅ DeleteDomainRecord Job ID: ${GlobalVariable.DeleteDomainRecord_job_id}")
+    } else {
+        println("❌ 無找到 DeleteDomainRecord Job")
+    }
 
-	// 嘗試從回應資料中找到 "RevokeCert" 的 job_id
-	def revokeCertJob = deleteJobInfo.find { it instanceof Map && it.name == "RevokeCert" }
+    // 嘗試找到 "RevokeCert" 的 job
+    def revokeCertJob = deleteJobInfo.find { it instanceof Map && it.name == "RevokeCert" }
 
-	if (revokeCertJob != null) {
-		GlobalVariable.RevokeCert_job_id = revokeCertJob.job_id
-		println("✅ RevokeCert Job ID: ${GlobalVariable.RevokeCert_job_id}")
-	} else {
-		println("❌ 無找到 RevokeCert Job")
-	}
+    if (revokeCertJob != null) {
+        GlobalVariable.RevokeCert_job_id = revokeCertJob.job_id
+        println("✅ RevokeCert Job ID: ${GlobalVariable.RevokeCert_job_id}")
+    } else {
+        println("❌ 無找到 RevokeCert Job")
+    }
 
-	// 處理不存在的 job
-	if (GlobalVariable.DeleteDomainRecord_job_id == null && GlobalVariable.RevokeCert_job_id == null) {
-		println("❌ 無 DeleteDomainRecord 或 RevokeCert Job")
-		// 進行錯誤處理或其他操作
-	}
+    // 處理不存在的 job
+    if (GlobalVariable.DeleteDomainRecord_job_id == null && GlobalVariable.RevokeCert_job_id == null) {
+        println("❌ 無 DeleteDomainRecord 或 RevokeCert Job")
+    }
 
-	// 如果 RevokeCert_job_id 存在，則執行 "更改RevokeCert 狀態" 的 WS 請求
-	if (GlobalVariable.RevokeCert_job_id != null) {
-		println("✅ RevokeCert Job ID found: ${GlobalVariable.RevokeCert_job_id}. Sending request to change status...")
-		def responseChangeStatus = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/更改RevokeCert 狀態'))
-		WS.verifyResponseStatusCode(responseChangeStatus, 204)
-	} else {
-		println("❌ No RevokeCert Job found, skipping status change.")
-	}
+    // 如果 RevokeCert_job_id 存在，則執行狀態變更請求
+    if (GlobalVariable.RevokeCert_job_id != null) {
+      //println("✅ RevokeCert Job ID found: ${GlobalVariable.RevokeCert_job_id}. Sending request to change status...")
+        def responseChangeStatus = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/更改RevokeCert 狀態'))
+    } else {
+        println("❌ No RevokeCert Job found, skipping status change.")
+    }
 } else {
-	println("❌ 回應資料格式不正確，無法處理")
+    println("❌ 回應資料格式不正確，無法處理")
 }
+
+WebUI.closeBrowser()

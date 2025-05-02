@@ -18,16 +18,22 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
 
+
 // 函數：載入外部資源（jQuery 和 Toastr.js）
 def loadExternalResources() {
-	WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://code.jquery.com/jquery-3.6.0.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
+	WebUI.executeJavaScript(
+		'var script = document.createElement("script"); script.src = "https://code.jquery.com/jquery-3.6.0.min.js"; document.head.appendChild(script);',
+		[], FailureHandling.CONTINUE_ON_FAILURE)
 	WebUI.delay(1)
-	
-	WebUI.executeJavaScript('var link = document.createElement("link"); link.rel = "stylesheet"; link.href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"; document.head.appendChild(link);', [], FailureHandling.CONTINUE_ON_FAILURE)
-	WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
-	
+
+	WebUI.executeJavaScript(
+		'var link = document.createElement("link"); link.rel = "stylesheet"; link.href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"; document.head.appendChild(link);',
+		[], FailureHandling.CONTINUE_ON_FAILURE)
+	WebUI.executeJavaScript(
+		'var script = document.createElement("script"); script.src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"; document.head.appendChild(script);',
+		[], FailureHandling.CONTINUE_ON_FAILURE)
 	WebUI.delay(1)
-	
+
 	WebUI.executeJavaScript('''
         var style = document.createElement("style");
         style.innerHTML = `
@@ -43,18 +49,17 @@ def loadExternalResources() {
     ''', [], FailureHandling.OPTIONAL)
 }
 
-'申請展延憑證'
 // (PDNS) 打憑證(付費)Tag
 def responseNameServerPoint = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/(PDNS) 打憑證(付費)Tag'))
-WS.verifyResponseStatusCode(responseNameServerPoint , 200, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseNameServerPoint, 200, FailureHandling.STOP_ON_FAILURE)
 
 // (PDNS) dctest Table 更新
 def responseIpResolution = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/(PDNS) dctest Table 更新'))
-WS.verifyResponseStatusCode(responseIpResolution , 200, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseIpResolution, 200, FailureHandling.STOP_ON_FAILURE)
 
 // 申請展延憑證
 def responseRenewCertificate = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/申請展延憑證'))
-WS.verifyResponseStatusCode(responseRenewCertificate , 201, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 201
+WS.verifyResponseStatusCode(responseRenewCertificate, 201, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.executeJavaScript("""
     // 建立 toast 消息顯示的 HTML 元素
@@ -110,72 +115,72 @@ WebUI.executeJavaScript("""
         setTimeout(function() {
             toast.remove();
         }, 1000);
-    }, 5000); // 顯示 5 秒後淡出並移除
+    }, 15000); // 顯示 15 秒後淡出並移除
 """, [])
 
-def renew_certificate = new JsonSlurper().parseText(responseRenewCertificate .getResponseText()) // 提取申請展延憑證 workflow_id
+// 擷取 workflow_id 並儲存
+def renew_certificate = new JsonSlurper().parseText(responseRenewCertificate.getResponseText())
 def rc_workflow_id = renew_certificate.workflow_id
 GlobalVariable.RC_WORKFLOW_ID = rc_workflow_id
 println("✅RC_WORKFLOW_ID: " + GlobalVariable.RC_WORKFLOW_ID)
 
 // 取得展延憑證詳細資料
 def responseDetails = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/取得展延憑證詳細資料'))
-WS.verifyResponseStatusCode(responseDetails, 200) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseDetails, 200)
 
 def renew_certificate_detail = new JsonSlurper().parseText(responseDetails.getResponseText())
-WS.verifyElementPropertyValue(responseDetails, 'workflow_id', GlobalVariable.RC_WORKFLOW_ID.toString(), FailureHandling.STOP_ON_FAILURE) // 驗證 workflow_id
-WS.verifyElementPropertyValue(responseDetails, 'domain', GlobalVariable.DOMAIN.toString(), FailureHandling.STOP_ON_FAILURE) // 驗證 domain
-WS.verifyElementPropertyValue(responseDetails, 'workflow_name', 'RenewCertificate', FailureHandling.STOP_ON_FAILURE) // 驗證 workflow_name
+WS.verifyElementPropertyValue(responseDetails, 'workflow_id', GlobalVariable.RC_WORKFLOW_ID.toString(), FailureHandling.STOP_ON_FAILURE)
+WS.verifyElementPropertyValue(responseDetails, 'domain', GlobalVariable.DOMAIN.toString(), FailureHandling.STOP_ON_FAILURE)
+WS.verifyElementPropertyValue(responseDetails, 'workflow_name', 'RenewCertificate', FailureHandling.STOP_ON_FAILURE)
 def workflow_name = renew_certificate_detail.workflow_name
 GlobalVariable.WORKFLOW_NAME = workflow_name
 println("✅WORKFLOW_NAME: " + GlobalVariable.WORKFLOW_NAME)
 
-// 取得展延憑證詳細資料項目資料 (Job 檢查)
+// 取得展延憑證項目資料 (Job狀態檢查)
 WebUI.delay(4)
 def responseWorkflow = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/取得展延憑證項目資料 (Job狀態檢查)'))
-WS.verifyResponseStatusCode(responseWorkflow, 200) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseWorkflow, 200)
 
-def renew_certificate_workflow = new JsonSlurper().parseText(responseWorkflow.getResponseText()) // 解析自動化工作項目資料 response
+def renew_certificate_workflow = new JsonSlurper().parseText(responseWorkflow.getResponseText())
 
-// 定義預期的 job 名稱
 def expectedNames = [
-    "PurchaseAndDeployCert",
-    "CheckPurchaseDeployCertificateStatus",
-    "RecheckCert"
+	"PurchaseAndDeployCert",
+	"CheckPurchaseDeployCertificateStatus",
+	"RecheckCert"
 ]
 
-// 驗證所有預期的 name 是否出現在回應中 
-def actualNames = renew_certificate_workflow.collect { it.name } // 獲取實際的 job names
-
+def actualNames = renew_certificate_workflow.collect { it.name }
 expectedNames.each { expectedName ->
-    assert actualNames.contains(expectedName) : "Missing expected job name: ${expectedName}"
+	assert actualNames.contains(expectedName) : "Missing expected job name: ${expectedName}"
 }
 
-// 檢查所有 job 的 status 是否為 success
-def failedJobs = renew_certificate_workflow.findAll { it.status != 'success' } // 找到所有 status 不是 success 的 job
-
+def failedJobs = renew_certificate_workflow.findAll { it.status != 'success' }
 if (failedJobs) {
-    println "❌ 以下 job status 不为 success："
-    failedJobs.each { job ->
-        println "🔴 Job ID: ${job.job_id}, Name: ${job.name}, Status: ${job.status}, Message: ${job.message ?: '無讯息'}"
-    }
+	println "❌ 以下 job status 不为 success："
+	failedJobs.each { job ->
+		println "🔴 Job ID: ${job.job_id}, Name: ${job.name}, Status: ${job.status}, Message: ${job.message ?: '無讯息'}"
+	}
 }
 
-// 將 job_id 存入 GlobalVariables
 renew_certificate_workflow.each { job ->
-    if (expectedNames.contains(job.name)) {
-        String globalVariableName = "${job.name}_job_id"
-        GlobalVariable."${globalVariableName}" = job.job_id
-        println "✅ 存储 job_id for ${job.name}: ${job.job_id} into GlobalVariable.${globalVariableName}"
-    }
+	if (expectedNames.contains(job.name)) {
+		String globalVariableName = "${job.name}_job_id"
+		GlobalVariable."${globalVariableName}" = job.job_id
+		println "✅ 存储 job_id for ${job.name}: ${job.job_id} into GlobalVariable.${globalVariableName}"
+	}
 }
 
-// 更改PurchaseAndDeployCert 狀態
+
+// ======================
+// 手動調整 Job 狀態
+// ======================
+
+// 更改 PurchaseAndDeployCert 狀態
 WebUI.delay(3)
 def responsePurchaseAndDeployCert = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/更改PurchaseAndDeployCert 狀態'))
-WS.verifyResponseStatusCode(responsePurchaseAndDeployCert , 204, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 204
+WS.verifyResponseStatusCode(responsePurchaseAndDeployCert, 204, FailureHandling.STOP_ON_FAILURE)
 
-// 更改RecheckCert 狀態
+// 更改 RecheckCert 狀態
 WebUI.delay(10)
 def responseRecheckCert = WS.sendRequest(findTestObject('Object Repository/API/申請展延憑證/Happy Path/更改RecheckCert 狀態'))
-WS.verifyResponseStatusCode(responseRecheckCert , 204, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 204
+WS.verifyResponseStatusCode(responseRecheckCert, 204, FailureHandling.STOP_ON_FAILURE)

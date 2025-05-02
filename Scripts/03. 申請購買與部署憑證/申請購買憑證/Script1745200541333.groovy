@@ -18,16 +18,16 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
 
+
 // 函數：載入外部資源（jQuery 和 Toastr.js）
 def loadExternalResources() {
 	WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://code.jquery.com/jquery-3.6.0.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
 	WebUI.delay(1)
-	
+
 	WebUI.executeJavaScript('var link = document.createElement("link"); link.rel = "stylesheet"; link.href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"; document.head.appendChild(link);', [], FailureHandling.CONTINUE_ON_FAILURE)
 	WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
-	
 	WebUI.delay(1)
-	
+
 	WebUI.executeJavaScript('''
         var style = document.createElement("style");
         style.innerHTML = `
@@ -42,20 +42,20 @@ def loadExternalResources() {
         document.head.appendChild(style);
     ''', [], FailureHandling.OPTIONAL)
 }
-
-'申請購買憑證'
-// (PDNS) NS指向設定
+// (PDNS) NS 指向設定
 def responseNameServerPoint = WS.sendRequest(findTestObject('Object Repository/API/申請買憑證/Happy Path/(PDNS) NS 指向設定'))
-WS.verifyResponseStatusCode(responseNameServerPoint , 200, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseNameServerPoint, 200, FailureHandling.STOP_ON_FAILURE)
 
-// (PDNS) IP解析
+// (PDNS) IP 解析
 def responseIpResolution = WS.sendRequest(findTestObject('Object Repository/API/申請買憑證/Happy Path/(PDNS) IP 解析'))
-WS.verifyResponseStatusCode(responseIpResolution , 200, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseIpResolution, 200, FailureHandling.STOP_ON_FAILURE)
 
-// 申請購買部署憑證
+// 申請購買與部署憑證
+WebUI.delay(3)
 def responsePurchaseCertificate = WS.sendRequest(findTestObject('Object Repository/API/申請買憑證/Happy Path/申請購買與部屬憑證'))
-WS.verifyResponseStatusCode(responsePurchaseCertificate , 201, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 201
+WS.verifyResponseStatusCode(responsePurchaseCertificate, 201, FailureHandling.STOP_ON_FAILURE)
 
+// 顯示 Toast 提示訊息
 WebUI.executeJavaScript("""
     // 建立 toast 消息顯示的 HTML 元素
     var toast = document.createElement("div");
@@ -110,72 +110,79 @@ WebUI.executeJavaScript("""
         setTimeout(function() {
             toast.remove();
         }, 1000);
-    }, 5000); // 顯示 5 秒後淡出並移除
+    }, 10000); // 顯示 10 秒後淡出並移除
 """, [])
 
-def purchase_certificate = new JsonSlurper().parseText(responsePurchaseCertificate .getResponseText()) // 提取申請購買部署憑證 workflow_id
+// 解析 workflow_id 並儲存到 GlobalVariable
+def purchase_certificate = new JsonSlurper().parseText(responsePurchaseCertificate.getResponseText())
 def pc_workflow_id = purchase_certificate.workflow_id
 GlobalVariable.PC_WORKFLOW_ID = pc_workflow_id
 println("✅PC_WORKFLOW_ID: " + GlobalVariable.PC_WORKFLOW_ID)
 
 // 取得購買憑證申請詳細資料
 def responseDetails = WS.sendRequest(findTestObject('Object Repository/API/申請買憑證/Happy Path/取得購買憑證申請詳細資料'))
-WS.verifyResponseStatusCode(responseDetails, 200) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseDetails, 200)
 
 def purchase_certificate_detail = new JsonSlurper().parseText(responseDetails.getResponseText())
-WS.verifyElementPropertyValue(responseDetails, 'workflow_id', GlobalVariable.PC_WORKFLOW_ID.toString(), FailureHandling.STOP_ON_FAILURE) // 驗證 workflow_id
-WS.verifyElementPropertyValue(responseDetails, 'domain', GlobalVariable.DOMAIN.toString(), FailureHandling.STOP_ON_FAILURE) // 驗證 domain
-WS.verifyElementPropertyValue(responseDetails, 'workflow_name', 'PurchaseCertificate', FailureHandling.STOP_ON_FAILURE) // 驗證 workflow_name
+WS.verifyElementPropertyValue(responseDetails, 'workflow_id', GlobalVariable.PC_WORKFLOW_ID.toString(), FailureHandling.STOP_ON_FAILURE)
+WS.verifyElementPropertyValue(responseDetails, 'domain', GlobalVariable.DOMAIN.toString(), FailureHandling.STOP_ON_FAILURE)
+WS.verifyElementPropertyValue(responseDetails, 'workflow_name', 'PurchaseCertificate', FailureHandling.STOP_ON_FAILURE)
+
 def workflow_name = purchase_certificate_detail.workflow_name
 GlobalVariable.WORKFLOW_NAME = workflow_name
 println("✅WORKFLOW_NAME: " + GlobalVariable.WORKFLOW_NAME)
 
-// 取得購買憑證申請項目資料 (Job 檢查)
+// 取得購買憑證項目資料 (Job狀態檢查)
 WebUI.delay(4)
 def responseWorkflow = WS.sendRequest(findTestObject('Object Repository/API/申請買憑證/Happy Path/取得購買憑證項目資料 (Job狀態檢查)'))
-WS.verifyResponseStatusCode(responseWorkflow, 200) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseWorkflow, 200)
 
-def purchase_domain_workflow = new JsonSlurper().parseText(responseWorkflow.getResponseText()) // 解析自動化工作項目資料 response
+def purchase_domain_workflow = new JsonSlurper().parseText(responseWorkflow.getResponseText())
 
-// 定義預期的 job 名稱
+// 預期的 Job 名稱清單
 def expectedNames = [
-    "PurchaseAndDeployCert",
-    "CheckPurchaseDeployCertificateStatus",
-    "RecheckCert"
+	"PurchaseAndDeployCert",
+	"CheckPurchaseDeployCertificateStatus",
+	"RecheckCert"
 ]
 
-// 驗證所有預期的 name 是否出現在回應中 
-def actualNames = purchase_domain_workflow.collect { it.name } // 獲取實際的 job names
+def actualNames = purchase_domain_workflow.collect { it.name }
 
 expectedNames.each { expectedName ->
-    assert actualNames.contains(expectedName) : "Missing expected job name: ${expectedName}"
+	assert actualNames.contains(expectedName) : "Missing expected job name: ${expectedName}"
 }
 
-// 檢查所有 job 的 status 是否為 success
-def failedJobs = purchase_domain_workflow.findAll { it.status != 'success' } // 找到所有 status 不是 success 的 job
+// 驗證所有 Job 狀態為 success
+def failedJobs = purchase_domain_workflow.findAll { it.status != 'success' }
 
 if (failedJobs) {
-    println "❌ 以下 job status 不为 success："
-    failedJobs.each { job ->
-        println "🔴 Job ID: ${job.job_id}, Name: ${job.name}, Status: ${job.status}, Message: ${job.message ?: '無讯息'}"
-    }
+	println "❌ 以下 job status 不為 success："
+	failedJobs.each { job ->
+		println "🔴 Job ID: ${job.job_id}, Name: ${job.name}, Status: ${job.status}, Message: ${job.message ?: '無訊息'}"
+	}
 }
 
-// 將 job_id 存入 GlobalVariables
+// 儲存每個 Job 的 job_id 到 GlobalVariable
 purchase_domain_workflow.each { job ->
-    if (expectedNames.contains(job.name)) {
-        String globalVariableName = "${job.name}_job_id"
-        GlobalVariable."${globalVariableName}" = job.job_id
-        println "✅ 存储 job_id for ${job.name}: ${job.job_id} into GlobalVariable.${globalVariableName}"
-    }
+	if (expectedNames.contains(job.name)) {
+		String globalVariableName = "${job.name}_job_id"
+		GlobalVariable."${globalVariableName}" = job.job_id
+		println "✅ 存儲 job_id for ${job.name}: ${job.job_id} into GlobalVariable.${globalVariableName}"
+	}
 }
 
-// 更改PurchaseAndDeployCert 狀態
+
+// ======================
+// 手動調整 Job 狀態
+// ======================
+
+// 更改 PurchaseAndDeployCert 狀態
 WebUI.delay(3)
 def responsePurchaseAndDeployCert = WS.sendRequest(findTestObject('Object Repository/API/申請買憑證/Happy Path/更改PurchaseAndDeployCert 狀態'))
-WS.verifyResponseStatusCode(responsePurchaseAndDeployCert , 204, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 204
+WS.verifyResponseStatusCode(responsePurchaseAndDeployCert, 204, FailureHandling.STOP_ON_FAILURE)
 
-// 更改RecheckCert 狀態
+// 更改 RecheckCert 狀態
 WebUI.delay(3)
 def responseRecheckCert = WS.sendRequest(findTestObject('Object Repository/API/申請買憑證/Happy Path/更改RecheckCert 狀態'))
-WS.verifyResponseStatusCode(responseRecheckCert , 204, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 204
+WS.verifyResponseStatusCode(responseRecheckCert, 204, FailureHandling.STOP_ON_FAILURE)
+

@@ -23,16 +23,28 @@ import java.util.Random
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import groovy.json.JsonSlurper
 
+
 // 函數：載入外部資源（jQuery 和 Toastr.js）
 def loadExternalResources() {
-	WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://code.jquery.com/jquery-3.6.0.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
+	WebUI.executeJavaScript('''
+        var script = document.createElement("script");
+        script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+        document.head.appendChild(script);
+    ''', [], FailureHandling.CONTINUE_ON_FAILURE)
 	WebUI.delay(1)
-	
-	WebUI.executeJavaScript('var link = document.createElement("link"); link.rel = "stylesheet"; link.href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"; document.head.appendChild(link);', [], FailureHandling.CONTINUE_ON_FAILURE)
-	WebUI.executeJavaScript('var script = document.createElement("script"); script.src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"; document.head.appendChild(script);', [], FailureHandling.CONTINUE_ON_FAILURE)
-	
+
+	WebUI.executeJavaScript('''
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css";
+        document.head.appendChild(link);
+
+        var script = document.createElement("script");
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js";
+        document.head.appendChild(script);
+    ''', [], FailureHandling.CONTINUE_ON_FAILURE)
 	WebUI.delay(1)
-	
+
 	WebUI.executeJavaScript('''
         var style = document.createElement("style");
         style.innerHTML = `
@@ -48,11 +60,7 @@ def loadExternalResources() {
     ''', [], FailureHandling.OPTIONAL)
 }
 
-'申請廳主買域名'
-// 申請廳主買域名
-def responsePurchaseDomain = WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/申請廳主買域名'))
-WS.verifyResponseStatusCode(responsePurchaseDomain, 201, FailureHandling.STOP_ON_FAILURE) // 檢查 HTTP 狀態碼是否為 201
-
+// 顯示 loading toast
 WebUI.executeJavaScript("""
     // 建立 toast 消息顯示的 HTML 元素
     var toast = document.createElement("div");
@@ -107,76 +115,67 @@ WebUI.executeJavaScript("""
         setTimeout(function() {
             toast.remove();
         }, 1000);
-    }, 5000); // 顯示 5 秒後淡出並移除
+    }, 13000); // 顯示 13 秒後淡出並移除
 """, [])
 
+// 申請廳主買域名
+def responsePurchaseDomain = WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/申請廳主買域名'))
+WS.verifyResponseStatusCode(responsePurchaseDomain, 201, FailureHandling.STOP_ON_FAILURE)
 
-
-def purchase_domain = new JsonSlurper().parseText(responsePurchaseDomain.getResponseText()) // 提取申請廳主買域名 workflow_id
-def pd_workflow_id = purchase_domain.workflow_id
-GlobalVariable.PD_WORKFLOW_ID = pd_workflow_id
+def purchase_domain = new JsonSlurper().parseText(responsePurchaseDomain.getResponseText())
+GlobalVariable.PD_WORKFLOW_ID = purchase_domain.workflow_id
 println("✅PD_WORKFLOW_ID: " + GlobalVariable.PD_WORKFLOW_ID)
 
 // 取得廳主買域名詳細資料
 def responseDetails = WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/取得廳主買域名詳細資料'))
-WS.verifyResponseStatusCode(responseDetails, 200) // 檢查 HTTP 狀態碼是否為 200
-
+WS.verifyResponseStatusCode(responseDetails, 200)
 def purchase_domain_detail = new JsonSlurper().parseText(responseDetails.getResponseText())
-WS.verifyElementPropertyValue(responseDetails, 'workflow_id', GlobalVariable.PD_WORKFLOW_ID.toString(), FailureHandling.STOP_ON_FAILURE) // 驗證 workflow_id
-WS.verifyElementPropertyValue(responseDetails, 'domain', GlobalVariable.DOMAIN.toString(), FailureHandling.STOP_ON_FAILURE) // 驗證 domain
-WS.verifyElementPropertyValue(responseDetails, 'workflow_name', 'CustomerApplyPurchaseDomain', FailureHandling.STOP_ON_FAILURE) // 驗證 workflow_name
-def workflow_name = purchase_domain_detail.workflow_name
-GlobalVariable.WORKFLOW_NAME = workflow_name
+WS.verifyElementPropertyValue(responseDetails, 'workflow_id', GlobalVariable.PD_WORKFLOW_ID.toString())
+WS.verifyElementPropertyValue(responseDetails, 'domain', GlobalVariable.DOMAIN.toString())
+WS.verifyElementPropertyValue(responseDetails, 'workflow_name', 'CustomerApplyPurchaseDomain')
+GlobalVariable.WORKFLOW_NAME = purchase_domain_detail.workflow_name
 
-// 取得廳主買域名項目資料 (Job 檢查)
+// 取得廳主買域名項目資料 (Job狀態檢查)
 WebUI.delay(4)
 def responseWorkflow = WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/取得廳主買域名項目資料 (Job狀態檢查)'))
-WS.verifyResponseStatusCode(responseWorkflow, 200) // 檢查 HTTP 狀態碼是否為 200
+WS.verifyResponseStatusCode(responseWorkflow, 200)
 
-def purchase_domain_workflow = new JsonSlurper().parseText(responseWorkflow.getResponseText()) // 解析自動化工作項目資料 response
-
-// 定義預期的 job 名稱
+def purchase_domain_workflow = new JsonSlurper().parseText(responseWorkflow.getResponseText())
 def expectedNames = [
-    "CheckDomainBlocked",
-    "VerifyTLD",
-    "UpdateNameServer",
-    "UpdateDomainRecord",
-    "MergeErrorRecord",
-    "RecheckDomainResolution",
-    "RemoveTag"
+	"CheckDomainBlocked", "VerifyTLD", "UpdateNameServer", "UpdateDomainRecord",
+	"MergeErrorRecord", "RecheckDomainResolution", "RemoveTag"
 ]
 
-// 驗證所有預期的 name 是否出現在回應中 
-def actualNames = purchase_domain_workflow.collect { it.name } // 獲取實際的 job names
-
+def actualNames = purchase_domain_workflow.collect { it.name }
 expectedNames.each { expectedName ->
-    assert actualNames.contains(expectedName) : "Missing expected job name: ${expectedName}"
+	assert actualNames.contains(expectedName) : "Missing expected job name: ${expectedName}"
 }
 
-// 檢查所有 job 的 status 是否為 success
-def failedJobs = purchase_domain_workflow.findAll { it.status != 'success' } // 找到所有 status 不是 success 的 job
-
+def failedJobs = purchase_domain_workflow.findAll { it.status != 'success' }
 if (failedJobs) {
-    println "❌ 以下 job status 不为 success："
-    failedJobs.each { job ->
-        println "🔴 Job ID: ${job.job_id}, Name: ${job.name}, Status: ${job.status}, Message: ${job.message ?: '無讯息'}"
-    }
+	println "❌ 以下 job status 不為 success："
+	failedJobs.each { job ->
+		println "🔴 Job ID: ${job.job_id}, Name: ${job.name}, Status: ${job.status}, Message: ${job.message ?: '無訊息'}"
+	}
 }
 
-// 將 job_id 存入 GlobalVariables
 purchase_domain_workflow.each { job ->
-    if (expectedNames.contains(job.name)) {
-        String globalVariableName = "${job.name}_job_id"
-        GlobalVariable."${globalVariableName}" = job.job_id
-        println "✅ 存储 job_id for ${job.name}: ${job.job_id} into GlobalVariable.${globalVariableName}"
-    }
+	if (expectedNames.contains(job.name)) {
+		GlobalVariable."${job.name}_job_id" = job.job_id
+		println "✅ 存储 job_id for ${job.name}: ${job.job_id} into GlobalVariable.${job.name}_job_id"
+	}
 }
 
-//人工設定，調整上層設定 Job狀態
+// ======================
+// 手動調整 Job 狀態
+// ======================
+
+// 更改 UpdateNameServer 狀態
 WebUI.delay(3)
-def responseUpdateNameServer = WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/更改UpdateNameServer 狀態')) // 更改UpdateNameServer 狀態
-//人工設定，調整複檢域名 Job狀態
+WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/更改UpdateNameServer 狀態'))
+
+// 更改 RecheckDomainResolution 狀態
 WebUI.delay(3)
-def responseRecheckDomainResolution = WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/更改RecheckDomainResolution 狀態')) // 更改RecheckDomainResolution 狀態
+WS.sendRequest(findTestObject('Object Repository/API/申請廳主買域名/Happy Path/更改RecheckDomainResolution 狀態'))
 
 

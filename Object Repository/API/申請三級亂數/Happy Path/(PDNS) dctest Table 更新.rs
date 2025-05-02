@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>(PDNS) dctest Table 更新</name>
+   <tag></tag>
+   <elementGuidId>406def8a-663e-48b1-a4a3-b107022b9ce7</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>true</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;search\u003d0\u0026site_group\u003ddctest\u0026go_page\u003d1\u0026login_code\u003d&quot;,
+  &quot;contentType&quot;: &quot;text/plain&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>accept</name>
+      <type>Main</type>
+      <value>text/html, */*; q=0.01</value>
+      <webElementGuid>a79ae528-5557-4a20-9e67-50e403dfb4be</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>accept-language</name>
+      <type>Main</type>
+      <value>zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7</value>
+      <webElementGuid>a2916e0d-f329-4a38-be3f-7abb4f4c759a</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>content-type</name>
+      <type>Main</type>
+      <value>application/x-www-form-urlencoded; charset=UTF-8</value>
+      <webElementGuid>1b4a3073-fd43-4098-80a7-2e0cdd9b81a7</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>origin</name>
+      <type>Main</type>
+      <value>https://pdns.vir999.com</value>
+      <webElementGuid>a9545ca0-52dd-4a15-82ef-f49d3672964d</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>priority</name>
+      <type>Main</type>
+      <value>u=1, i</value>
+      <webElementGuid>abfa6a84-6952-4209-af85-fa1aa45e1595</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>referer</name>
+      <type>Main</type>
+      <value>https://pdns.vir999.com/d_domains.php</value>
+      <webElementGuid>af4df2aa-2655-41e0-af45-c22aee1feb30</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>sec-ch-ua</name>
+      <type>Main</type>
+      <value>&quot;Google Chrome&quot;;v=&quot;135&quot;, &quot;Not-A.Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;135&quot;</value>
+      <webElementGuid>2c52fd64-c0a7-47d1-bf5a-86b65f9300ac</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>sec-ch-ua-mobile</name>
+      <type>Main</type>
+      <value>?0</value>
+      <webElementGuid>193add48-f031-417b-960b-abb92fadb151</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>sec-ch-ua-platform</name>
+      <type>Main</type>
+      <value>&quot;macOS&quot;</value>
+      <webElementGuid>7c5ee861-6363-48c9-8a69-27b3678ce6fa</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>sec-fetch-dest</name>
+      <type>Main</type>
+      <value>empty</value>
+      <webElementGuid>908638f4-7420-4c27-a0d1-539f75bff96b</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>sec-fetch-mode</name>
+      <type>Main</type>
+      <value>cors</value>
+      <webElementGuid>ed54aaa2-8bfc-4ac2-9f28-e9c82a762110</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>sec-fetch-site</name>
+      <type>Main</type>
+      <value>same-origin</value>
+      <webElementGuid>805e0440-75fc-4398-a927-95442300e659</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>user-agent</name>
+      <type>Main</type>
+      <value>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36</value>
+      <webElementGuid>50397020-cf34-42c9-bb92-1035781eefc6</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>x-requested-with</name>
+      <type>Main</type>
+      <value>XMLHttpRequest</value>
+      <webElementGuid>eb81eed2-d761-43b1-a71b-6a2fa31b9655</webElementGuid>
+   </httpHeaderProperties>
+   <httpHeaderProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Cookie</name>
+      <type>Main</type>
+      <value>G_ENABLED_IDPS=google; PHPSESSID=f4403c6f199c8d0548773115342911f2; G_AUTHUSER_H=0</value>
+      <webElementGuid>4af74196-795a-4b77-a8ff-a2b8257535ee</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>9.7.4</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path></path>
+   <restRequestMethod>POST</restRequestMethod>
+   <restUrl>https://pdns.vir999.com/table_domains.php</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <soapServiceFunction></soapServiceFunction>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>
